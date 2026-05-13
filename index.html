@@ -63,7 +63,19 @@ nav {
 .nav-cta { background: var(--brick) !important; color: #fff !important; padding: 9px 20px; border-radius: 3px; font-weight: 500 !important; }
 
 /* ── HERO ── */
-.hero { background: var(--green); padding: 80px 5vw 180px; position: relative; overflow: hidden; }
+.hero { background: var(--green); padding: 72px 5vw 0; position: relative; overflow: hidden; }
+.hero-text { position: relative; z-index: 2; padding-bottom: 48px; }
+.hero-illustration { position: relative; width: 100%; line-height: 0; }
+.hero-illustration::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 60%;
+  background: linear-gradient(to bottom, var(--green) 0%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+.hero-illustration img { display: block; width: 100%; opacity: 0.7; }
 .hero-eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 24px; }
 .hero-eyebrow span { font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
 .hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--brick-mid); }
@@ -250,19 +262,19 @@ footer { background: var(--ink); padding: 48px 5vw 32px; }
 
 <!-- HERO -->
 <section class="hero" id="top">
-  <div style="position:absolute;bottom:0;left:0;right:0;width:100%;pointer-events:none">
-    <div style="position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(to bottom,#3A5C34 0%,transparent 100%);z-index:1"></div>
-    <img src="high-street.svg" alt="Illustration of Watlington High Street"
-         style="display:block;width:100%;opacity:0.5;position:relative;z-index:0">
+  <div class="hero-text">
+    <div class="hero-eyebrow">
+      <span>Watlington · Oxfordshire · OX49</span>
+    </div>
+    <h1>Imagine a high street<br><em>that owns itself.</em></h1>
+    <p class="hero-sub">Not owned by a distant landlord. Not vulnerable to speculation. Held in trust — building by building — for everyone who lives here, now and for generations to come.</p>
+    <div class="hero-actions">
+      <a href="#register" class="btn-primary">Register your interest</a>
+      <a href="#about" class="btn-ghost">Find out more →</a>
+    </div>
   </div>
-  <div class="hero-eyebrow">
-    <span>Watlington · Oxfordshire · OX49</span>
-  </div>
-  <h1>Imagine a high street<br><em>that owns itself.</em></h1>
-  <p class="hero-sub">Not owned by a distant landlord. Not vulnerable to speculation. Held in trust — building by building — for everyone who lives here, now and for generations to come.</p>
-  <div class="hero-actions">
-    <a href="#register" class="btn-primary">Register your interest</a>
-    <a href="#about" class="btn-ghost">Find out more →</a>
+  <div class="hero-illustration">
+    <img src="high-street.svg" alt="Illustration of Watlington High Street">
   </div>
 </section>
 

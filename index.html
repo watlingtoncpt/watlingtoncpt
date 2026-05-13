@@ -64,13 +64,6 @@ nav {
 
 /* ── HERO ── */
 .hero { background: var(--green); padding: 80px 5vw 72px; position: relative; overflow: hidden; }
-.hero-landscape {
-  position: absolute; bottom: 0; right: 0; width: 48%; height: 100%;
-  background: linear-gradient(to right, var(--green) 0%, transparent 30%),
-              repeating-linear-gradient(135deg, transparent, transparent 20px, rgba(255,255,255,0.025) 20px, rgba(255,255,255,0.025) 21px);
-  pointer-events: none;
-}
-.hero-kite { position: absolute; top: 22%; right: 12%; opacity: 0.15; }
 .hero-eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 24px; }
 .hero-eyebrow span { font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
 .hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--brick-mid); }
@@ -224,7 +217,6 @@ footer { background: var(--ink); padding: 48px 5vw 32px; }
   .about-cols, .property-layout, .legacy-layout { grid-template-columns: 1fr; gap: 28px; }
   nav .nav-links { display: none; }
   .ribbon-divider { display: none; }
-  .hero-kite { display: none; }
   .hero { padding: 56px 6vw 52px; }
 }
 </style>
@@ -258,11 +250,8 @@ footer { background: var(--ink); padding: 48px 5vw 32px; }
 
 <!-- HERO -->
 <section class="hero" id="top">
-  <div class="hero-landscape"></div>
-  <svg class="hero-kite" width="80" height="80" viewBox="0 0 80 80" fill="none">
-    <path d="M40 4 L72 40 L40 68 L8 40 Z" fill="white"/>
-    <path d="M40 68 L44 80" stroke="white" stroke-width="1.5"/>
-  </svg>
+  <img src="high-street.svg" alt="Illustration of Watlington High Street"
+       style="position:absolute;bottom:0;right:0;width:55%;max-width:520px;opacity:0.35;pointer-events:none">
   <div class="hero-eyebrow">
     <span>Watlington · Oxfordshire · OX49</span>
   </div>

@@ -214,6 +214,60 @@ h2 { font-family: 'Libre Baskerville', serif; font-size: clamp(24px, 3.5vw, 38px
 .model-photo img { width: 100%; height: 100%; object-fit: cover; }
 .model-photo-placeholder { text-align: center; color: var(--ink-soft); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.8; padding: 12px; }
 
+/* ── FAQ ── */
+.faq-section { background: var(--chalk); }
+.faq-section h2 { max-width: 480px; }
+.faq-categories { display: flex; flex-direction: column; gap: 48px; margin-top: 48px; }
+.faq-category h3 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--brick);
+  display: inline-block;
+}
+.faq-list { display: flex; flex-direction: column; border-top: 1px solid var(--border); }
+details {
+  border-bottom: 1px solid var(--border);
+}
+details summary {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 15.5px;
+  font-weight: 700;
+  color: var(--ink);
+  padding: 18px 40px 18px 0;
+  cursor: pointer;
+  position: relative;
+  list-style: none;
+  line-height: 1.4;
+}
+details summary::-webkit-details-marker { display: none; }
+details summary::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--brick);
+  font-family: 'Source Sans 3', sans-serif;
+  line-height: 1;
+}
+details[open] summary::after { content: '−'; }
+details[open] summary { color: var(--brick); }
+.faq-answer {
+  font-size: 15px;
+  color: var(--ink-mid);
+  line-height: 1.85;
+  padding: 4px 0 24px 0;
+  max-width: 720px;
+}
+.faq-answer p { margin-bottom: 12px; }
+.faq-answer p:last-child { margin-bottom: 0; }
+
 /* ── FOOTER ── */
 footer { background: var(--ink); padding: 48px 5vw 32px; }
 .footer-top { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 24px; flex-wrap: wrap; gap: 24px; }
@@ -255,6 +309,7 @@ footer { background: var(--ink); padding: 48px 5vw 32px; }
     <li><a href="#legacy">Mark &amp; Ming Carlisle</a></li>
     <li><a href="#howitworks">How It Works</a></li>
     <li><a href="#founders">The Team</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#involve">Get Involved</a></li>
     <li><a href="#register" class="nav-cta">Register Interest</a></li>
   </ul>
@@ -344,7 +399,7 @@ footer { background: var(--ink); padding: 48px 5vw 32px; }
   <p class="section-label">First acquisition target</p>
   <div class="property-layout">
     <div>
-      <span class="status-pill">Acquisition in progress</span>
+      <span class="status-pill">Fundraising in progress</span>
       <div class="property-address">2 High Street,<br>Watlington OX49</div>
       <div class="fact-list">
         <div class="fact">
@@ -624,6 +679,204 @@ footer { background: var(--ink); padding: 48px 5vw 32px; }
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <p class="section-label">Common questions</p>
+  <h2>Frequently asked questions</h2>
+  <div class="faq-categories">
+
+    <div class="faq-category">
+      <h3>About WCPT</h3>
+      <div class="faq-list">
+
+        <details>
+          <summary>What is Watlington Community Property Trust?</summary>
+          <div class="faq-answer"><p>Watlington Community Property Trust Limited (WCPT) is a Community Benefit Society — a type of democratically owned, regulated organisation — set up to acquire and permanently community-own commercial property on Watlington High Street. Our first acquisition target is the freehold of 2 High Street.</p><p>The goal is straightforward: take the buildings that house the independent businesses at the heart of this town out of speculative private ownership and put them into community hands — forever.</p></div>
+        </details>
+
+        <details>
+          <summary>What is a Community Benefit Society?</summary>
+          <div class="faq-answer"><p>A Community Benefit Society (CBS) is a legal structure regulated by the Financial Conduct Authority, established under the Co-operative and Community Benefit Societies Act 2014. It is specifically designed for enterprises run for the benefit of the wider community rather than for profit.</p><p>Key features: every member has one vote, regardless of how much they have invested. Profits must be reinvested in the community purpose. A statutory asset lock means the assets cannot be sold for private gain — ever. It is a structure used across the UK to save pubs, shops, and community spaces.</p></div>
+        </details>
+
+        <details>
+          <summary>What does "A High Street That Owns Itself" mean?</summary>
+          <div class="faq-answer"><p>When a private landlord owns a High Street building, the community has no say in what happens to it — who rents it, at what price, or whether it is left vacant. When the community owns the freehold, the community decides.</p><p>Our tagline describes the long-term ambition: a High Street where the buildings are owned by the people who live and work here, managed for viability rather than maximum return, and protected from speculative ownership in perpetuity.</p></div>
+        </details>
+
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <h3>The Property</h3>
+      <div class="faq-list">
+
+        <details>
+          <summary>Which property are you buying, and what does it include?</summary>
+          <div class="faq-answer"><p>The target property is the freehold of 2 High Street, Watlington OX49. It includes two ground-floor commercial units — 2 High Street (currently vacant, 593 sq ft) and 2a High Street (currently let, 502 sq ft) — plus the landlord's interest in a first-floor flat on a long lease. The flat itself is not part of the acquisition; we are buying the freehold interest only.</p></div>
+        </details>
+
+        <details>
+          <summary>What will the shops be used for — who will the tenants be?</summary>
+          <div class="faq-answer"><p>WCPT will let to local independent businesses on commercial terms. Our community benefit purpose — preserving commercial premises for independent businesses and preventing speculative use — means we actively apply criteria when selecting tenants. We will not let to national multiples, and certain other business types will not be considered appropriate. Full details of our tenant selection criteria will be set out in WCPT's Lettings Policy, which will be published at watlingtoncpt.org.uk.</p><p>2a High Street is currently let to SO Sustainable, which will continue to occupy on a new commercial lease following acquisition. The larger unit at 2 High Street is currently vacant, and there is already existing interest from potential tenants noted in the marketing materials. We anticipate it being re-let within three months of acquisition.</p></div>
+        </details>
+
+        <details>
+          <summary>What is the asking price? Could there be a bidding war?</summary>
+          <div class="faq-answer"><p>We have commissioned an independent RICS Red Book valuation, which will be completed before the share offer launches. We will not offer above the independently assessed market value. We will not be bidding speculatively.</p><p>It is possible another buyer emerges — which is exactly why pace matters. The more people who register support now, the stronger the case we can make and the more quickly we can move when ready.</p></div>
+        </details>
+
+        <details>
+          <summary>Can I invest if I am a manager or tenant of a business in the property?</summary>
+          <div class="faq-answer"><p>Yes. Tenants and business operators can be members and investors on exactly the same terms as anyone else. The same governance rules apply to everyone: one vote, same rights, same information. There is no preferential treatment for tenants in relation to membership or investment.</p><p>If you were also on the Management Committee, any decisions affecting your tenancy would be handled under the Conflict of Interest Policy — you would declare your interest and step out of those discussions and votes.</p></div>
+        </details>
+
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <h3>Governance and Control</h3>
+      <div class="faq-list">
+
+        <details>
+          <summary>One vote per member — how do you actually run a business like that?</summary>
+          <div class="faq-answer"><p>The same way most well-run organisations do: you separate ownership from management. Members own the society and elect a Management Committee — a small group of between 3 and 12 people — to run its day-to-day affairs. The Committee makes operational decisions; members vote on significant matters (rule changes, major transactions, winding up) at Annual and Special Members' Meetings.</p><p>This model has been used successfully across the UK to run pubs, shops, farms, and community buildings. Democratic ownership does not mean everyone votes on every invoice — it means the community the society is supposed to benefit has real control over the organisation that serves them.</p></div>
+        </details>
+
+        <details>
+          <summary>Are founding members given any special treatment? Can they be voted off?</summary>
+          <div class="faq-answer"><p>No special treatment. Founding members hold the same shares and have the same single vote as any other member. They serve on the Management Committee subject to exactly the same rules as anyone else — including term limits, the code of conduct, and removal procedures.</p><p>Any Management Committee member can be removed by a simple majority of members at a Special Members' Meeting. That is a deliberate safeguard written into the registered rules — not a courtesy. WCPT is designed to outlast its founders.</p></div>
+        </details>
+
+        <details>
+          <summary>Are there conflicts of interest in the founding committee?</summary>
+          <div class="faq-answer"><p>Yes — and they are fully declared. Two founding members have interests in the target property: Steph Van de Pette is the current tenant of 2a High Street, and Jess Carlisle Janson is one of the inheriting owners of the freehold. Both interests are documented in the Register of Interests and managed under the Conflict of Interest Policy.</p><p>In practice: the property acquisition is handled by committee members with no interest in it. The lease to SO Sustainable is set at independently assessed market rent, with Steph having no involvement in agreeing her own lease terms. All of this will be disclosed in full in the share offer document. These arrangements are not unusual in early-stage community ownership projects — what matters is that they are visible and managed.</p></div>
+        </details>
+
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <h3>Investing</h3>
+      <div class="faq-list">
+
+        <details>
+          <summary>How do I invest?</summary>
+          <div class="faq-answer"><p>The share offer is not yet live — register your interest at watlingtoncpt.org.uk and we will let you know the moment it opens.</p><p>When the offer opens, you will be able to invest via an online platform, accepting debit and credit cards, Apple Pay, Google Pay, and bank transfer. A paper application form will also be available for anyone who prefers not to invest online — at watlingtoncpt.org.uk and from a number of High Street businesses.</p><p>Full details of how to invest, including the platform and payment options, will be published in the share offer document.</p></div>
+        </details>
+
+        <details>
+          <summary>What is the minimum and maximum investment?</summary>
+          <div class="faq-answer"><p>The minimum and maximum investment amounts will be published in the share offer document. The minimum investment is likely to be in the region of £500. If you have a question about a specific amount you are considering, contact us at secretary@watlingtoncpt.org.uk and we will do our best to help.</p></div>
+        </details>
+
+        <details>
+          <summary>Can organisations and businesses invest?</summary>
+          <div class="faq-answer"><p>Yes. A corporate body can be a member, with a named individual designated as its representative on the share register. Please get in touch before investing to discuss corporate membership.</p></div>
+        </details>
+
+        <details>
+          <summary>Can I buy shares as a gift for someone else?</summary>
+          <div class="faq-answer"><p>You can purchase shares with the intention of gifting them, provided both you and the recipient are 16 or over. The recipient must complete their own membership application and consent to WCPT membership before shares are formally issued in their name.</p></div>
+        </details>
+
+        <details>
+          <summary>Will I get a share certificate?</summary>
+          <div class="faq-answer"><p>Yes. Every investor will receive a community share certificate once the offer closes and the acquisition completes.</p></div>
+        </details>
+
+        <details>
+          <summary>Can I sell my shares?</summary>
+          <div class="faq-answer"><p>No. Community shares are withdrawable but not transferable — you cannot sell them to another person. This is fundamental to the model: it prevents a secondary market developing and keeps the ownership genuinely community-based rather than investment-driven.</p></div>
+        </details>
+
+        <details>
+          <summary>What happens to my shares if I die?</summary>
+          <div class="faq-answer"><p>Your community shares form part of your estate. If you have nominated someone to receive them, the Society will transfer or pay the value of your shares to that person on proof of your death. If you have not made a nomination, your personal representative may deal with your shares as part of your estate in the usual way.</p></div>
+        </details>
+
+        <details>
+          <summary>When can I get my money back?</summary>
+          <div class="faq-answer"><p>Community shares are long-term capital. There will be an initial lock-in period during which withdrawals are not permitted, and withdrawals after that period are at the absolute discretion of the Management Committee — they are never guaranteed.</p><p>Full details of the lock-in period, withdrawal process, notice requirements, and any conditions applying to withdrawals will be published in the share offer document. Do not invest money you may need in the short or medium term.</p></div>
+        </details>
+
+        <details>
+          <summary>What return will I get on my investment?</summary>
+          <div class="faq-answer"><p>WCPT may pay a modest rate of interest on shares, subject to financial performance and the Management Committee's assessment of affordability. Interest is never guaranteed. Full details of any interest rate, timing, and conditions will be published in the share offer document.</p><p>Beyond any interest, members do not receive a financial return. Any surplus is reinvested in the society's community purpose — maintaining the property, building reserves, and funding future acquisitions. This is by design: WCPT is a community benefit society, not an investment vehicle.</p><p>Community shares carry real risk. The value of your investment could go down as well as up. You should not invest more than you can afford to hold for the long term.</p></div>
+        </details>
+
+        <details>
+          <summary>Is there tax relief available on my investment?</summary>
+          <div class="faq-answer"><p>WCPT's primary trade is the letting of commercial property, which is an excluded activity under EIS and SEIS legislation. Investments in this offer are therefore not eligible for EIS or SEIS tax relief. This is not unusual for property-holding community benefit societies.</p></div>
+        </details>
+
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <h3>Finance and Debt</h3>
+      <div class="faq-list">
+
+        <details>
+          <summary>Will WCPT take on debt?</summary>
+          <div class="faq-answer"><p>Possibly, but only as a supplement to community share capital — not as its primary funding mechanism. The society's rules cap borrowing at 75% of the value of fixed assets, and WCPT will not borrow to fund share withdrawals.</p><p>Full details of the funding structure — including the share offer targets, any loan arrangements, and the minimum raise required to proceed — will be published in the share offer document.</p></div>
+        </details>
+
+        <details>
+          <summary>If you only raise a small amount, would you then borrow heavily on top?</summary>
+          <div class="faq-answer"><p>No. The share offer will have a hard minimum target: if it is not reached, the offer closes and all money is returned in full. WCPT does not proceed with an acquisition it cannot substantially fund from community share capital. Debt, where used at all, supplements the raise — it does not replace it.</p><p>Full details of the funding structure, minimum target, and any loan arrangements will be published in the share offer document.</p></div>
+        </details>
+
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <h3>The Future</h3>
+      <div class="faq-list">
+
+        <details>
+          <summary>What happens if another property becomes available while you own this one?</summary>
+          <div class="faq-answer"><p>Expansion is the long-term ambition. WCPT is designed as a growing community-owned estate, not a single-property vehicle. When a further acquisition opportunity arises, the Management Committee can pursue it through a new share offer, a loan from community finance institutions secured against the existing property, or a combination of both.</p><p>Each future acquisition would go through the same governance process — independent valuation, full disclosure to members, Management Committee approval. No acquisition can exceed the borrowing limits in the society's rules.</p></div>
+        </details>
+
+        <details>
+          <summary>How do you stop landlords pricing you out once they know you want to buy?</summary>
+          <div class="faq-answer"><p>Two things protect against this. First, WCPT is bound by its rules to obtain an independent RICS Red Book valuation before any acquisition and will not offer above the independently assessed market value — there is no mechanism to pay over the odds even if the Management Committee wanted to.</p><p>Second, the community share offer model means the price WCPT can pay is determined by what the community is willing to invest — not by what any individual is willing to pay speculatively. If a seller wants more than the market value, WCPT simply does not buy.</p></div>
+        </details>
+
+        <details>
+          <summary>What is the total value of the Watlington High Street?</summary>
+          <div class="faq-answer"><p>We do not have a definitive figure. The High Street comprises many different freeholds and leaseholds in different ownership, and no comprehensive valuation has been published. Secondary commercial property in South Oxfordshire market towns typically yields 6–9% on purchase price, which gives a rough basis for individual property estimates.</p><p>WCPT's ambition is long-term and incremental. We are starting with one building. The broader picture is about demonstrating the model works here, then expanding when the community has the appetite and the capital to do so.</p></div>
+        </details>
+
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <h3>Risk and Scenarios</h3>
+      <div class="faq-list">
+
+        <details>
+          <summary>What happens if you do not raise enough money?</summary>
+          <div class="faq-answer"><p>The share offer will have a hard minimum target. If that target is not reached by the closing date, the offer closes without proceeding to acquisition and all share capital is returned to investors in full. Investors bear none of the cost of an unsuccessful offer.</p><p>Full details of the minimum target, refund process, and timeline will be published in the share offer document.</p></div>
+        </details>
+
+        <details>
+          <summary>What if the purchase falls through after the offer closes?</summary>
+          <div class="faq-answer"><p>If the offer has closed and funds have been transferred to WCPT but the acquisition cannot proceed — for example if probate is not resolved or the vendor withdraws — share capital would be returned to investors in full. Full details of the conditions and process for refunds in this scenario will be set out in the share offer document.</p></div>
+        </details>
+
+        <details>
+          <summary>What if WCPT is wound up — do I get my money back?</summary>
+          <div class="faq-answer"><p>In a solvent winding up, after all debts and liabilities are paid, paid-up share capital is returned to members before any remaining assets are distributed. So yes — if the society has sufficient assets, share capital is repaid.</p><p>Any surplus after repayment of share capital transfers to another asset-locked organisation under the statutory asset lock. It cannot be distributed to members or founding committee members as a windfall. This cannot be changed by any vote of the membership — it is baked into the registered rules permanently.</p><p>If WCPT becomes insolvent, share capital could be lost in whole or in part. Community shares are not covered by the Financial Services Compensation Scheme.</p></div>
+        </details>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-top">
@@ -636,6 +889,7 @@ footer { background: var(--ink); padding: 48px 5vw 32px; }
       <a href="#property">The Property</a>
       <a href="#howitworks">How It Works</a>
       <a href="#founders">The Team</a>
+      <a href="#faq">FAQ</a>
       <a href="#involve">Get Involved</a>
       <a href="mailto:secretary@watlingtoncpt.org.uk">secretary@watlingtoncpt.org.uk</a>
     </div>

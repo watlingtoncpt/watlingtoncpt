@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Notice — Watlington Community Property</title>
+<meta name="description" content="Privacy notice for Watlington Community Property — how we collect, use and protect your personal data.">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root {
+  --cream:#F7F4EE; --cream-dark:#EDE8DC; --chalk:#FAFAF7;
+  --brick:#9C4A2B; --brick-light:#F2E0D8;
+  --green:#3A5C34;
+  --ink:#1E1E1A; --ink-mid:#4A4840; --ink-soft:#6E6A60;
+  --white:#FDFCF9; --border:rgba(30,30,26,0.12);
+}
+body { font-family:'Source Sans 3',sans-serif; background:var(--chalk); color:var(--ink); font-size:16px; line-height:1.7; }
+
+/* NAV */
+nav { background:var(--green); padding:0 5vw; display:flex; align-items:center; justify-content:space-between; height:68px; }
+.nav-wordmark { display:flex; align-items:center; gap:14px; text-decoration:none; }
+.nav-emblem { width:36px; height:36px; border:1.5px solid rgba(255,255,255,0.35); border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.nav-emblem svg { width:18px; height:18px; }
+.nav-name { font-family:'Libre Baskerville',serif; color:#fff; font-size:14px; line-height:1.25; }
+.nav-name span { display:block; font-family:'Source Sans 3',sans-serif; font-size:10px; font-weight:300; color:rgba(255,255,255,0.6); letter-spacing:0.1em; text-transform:uppercase; margin-top:2px; }
+.nav-back { color:rgba(255,255,255,0.7); text-decoration:none; font-size:13px; border-bottom:1px solid rgba(255,255,255,0.3); padding-bottom:2px; }
+.nav-back:hover { color:#fff; }
+
+/* PAGE HEADER */
+.page-header { background:var(--green); padding:56px 5vw 48px; }
+.page-header .label { font-size:10.5px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:rgba(255,255,255,0.55); margin-bottom:12px; }
+.page-header h1 { font-family:'Libre Baskerville',serif; font-size:clamp(28px,4vw,44px); font-weight:700; color:#fff; line-height:1.2; margin-bottom:12px; }
+.page-header .meta { font-size:13px; color:rgba(255,255,255,0.5); }
+
+/* CONTENT */
+.content { max-width:760px; margin:0 auto; padding:64px 5vw 80px; }
+.content h2 { font-family:'Libre Baskerville',serif; font-size:20px; font-weight:700; color:var(--ink); margin:40px 0 14px; padding-bottom:10px; border-bottom:1px solid var(--border); }
+.content h2:first-child { margin-top:0; }
+.content p { font-size:15.5px; color:var(--ink-mid); line-height:1.85; margin-bottom:16px; }
+.content p:last-child { margin-bottom:0; }
+.content ul { margin:0 0 16px 20px; }
+.content ul li { font-size:15px; color:var(--ink-mid); line-height:1.85; margin-bottom:6px; }
+
+/* TABLES */
+.table-wrap { overflow-x:auto; margin:16px 0 24px; }
+table { width:100%; border-collapse:collapse; font-size:14px; }
+thead th { background:var(--green); color:#fff; font-family:'Libre Baskerville',serif; font-weight:700; padding:12px 16px; text-align:left; font-size:13px; }
+tbody tr:nth-child(even) { background:var(--cream); }
+tbody tr:nth-child(odd) { background:var(--white); }
+tbody td { padding:12px 16px; color:var(--ink-mid); vertical-align:top; line-height:1.7; border-bottom:1px solid var(--border); }
+tbody td:first-child { font-weight:500; color:var(--ink); }
+
+/* WHO WE ARE TABLE */
+.info-table { margin:16px 0 24px; border:1px solid var(--border); border-radius:4px; overflow:hidden; }
+.info-table table { font-size:14px; }
+.info-table tbody td:first-child { width:160px; background:var(--cream); }
+
+/* FOOTER */
+footer { background:var(--ink); padding:40px 5vw 28px; }
+.footer-inner { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; padding-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.08); margin-bottom:16px; }
+.footer-brand { font-family:'Libre Baskerville',serif; color:#fff; font-size:14px; line-height:1.35; }
+.footer-brand span { display:block; font-family:'Source Sans 3',sans-serif; font-size:10px; color:rgba(255,255,255,0.4); letter-spacing:0.1em; text-transform:uppercase; margin-top:4px; }
+.footer-links { display:flex; gap:20px; flex-wrap:wrap; }
+.footer-links a { color:rgba(255,255,255,0.45); text-decoration:none; font-size:13px; }
+.footer-links a:hover { color:#fff; }
+.footer-bottom { font-size:12px; color:rgba(255,255,255,0.3); line-height:1.9; }
+
+@media(max-width:640px){ .footer-inner{flex-direction:column;align-items:flex-start} }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-wordmark" href="index.html">
+    <div class="nav-emblem">
+      <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5">
+        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+    </div>
+    <div class="nav-name">
+      Watlington Community Property
+      <span>Community Benefit Society · In Formation</span>
+    </div>
+  </a>
+  <a class="nav-back" href="index.html">← Back to main site</a>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <p class="label">Legal</p>
+  <h1>Privacy Notice</h1>
+  <p class="meta">Last updated: [ ] &nbsp;|&nbsp; Version 1.0</p>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <h2>Who we are</h2>
+  <p>We are Watlington Community Property Limited, a Community Benefit Society in the process of registration with the Financial Conduct Authority. Our purpose is to acquire and manage commercial property in Watlington for the long-term benefit of the local community.</p>
+  <div class="info-table">
+    <table>
+      <tbody>
+        <tr><td>Organisation</td><td>Watlington Community Property Limited</td></tr>
+        <tr><td>Registered office</td><td>1 Spring Lane, Watlington, Oxfordshire OX49 5QL</td></tr>
+        <tr><td>Email</td><td><a href="mailto:secretary@watlingtoncpt.org.uk">secretary@watlingtoncpt.org.uk</a></td></tr>
+        <tr><td>Website</td><td><a href="https://watlingtoncpt.org.uk">watlingtoncpt.org.uk</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>We are the data controller for all personal data you provide to us. This means we are responsible for deciding how and why your data is used, and for keeping it safe.</p>
+
+  <h2>What data we collect and why</h2>
+  <p>We only collect data that is necessary for the purpose for which you provide it. The table below explains what we collect, why, and on what legal basis.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Why you're sharing data with us</th><th>Data we collect</th><th>Legal basis</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Registering your interest in the project via our website</td><td>Name, email address</td><td>Your consent — you can withdraw this at any time</td></tr>
+        <tr><td>Signing up to our newsletter or updates</td><td>Name, email address</td><td>Your consent — you can unsubscribe at any time</td></tr>
+        <tr><td>Applying to join the Management Committee</td><td>Name, email address, relevant experience and background</td><td>Your consent</td></tr>
+        <tr><td>Becoming a member of the Society</td><td>Name, email address, postal address, postcode</td><td>Necessary for our contract with you as a member, and to comply with our legal obligations under our registered Rules</td></tr>
+        <tr><td>Contacting us by email or post</td><td>Name, email address or postal address, contents of your message</td><td>Our legitimate interest in responding to your enquiry</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>How we use your data</h2>
+  <p>We use your data only for the purpose for which you provided it. We will never sell your data or share it with third parties for their own marketing purposes.</p>
+  <p>If you have registered an interest or signed up for updates, we will use your name and email address to send you information about WCP's progress, the share offer, and community events in Watlington. You can unsubscribe at any time by clicking the unsubscribe link in any email we send, or by emailing us at <a href="mailto:secretary@watlingtoncpt.org.uk">secretary@watlingtoncpt.org.uk</a>.</p>
+
+  <h2>Who we share your data with</h2>
+  <p>We use the following services to help us communicate and manage information. These services process your data on our behalf and are required to keep it secure and use it only for the purposes we specify.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Service</th><th>What it's used for</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Mailchimp (Intuit Inc.)</td><td>Sending newsletters and updates to supporters who have signed up</td></tr>
+        <tr><td>Google Forms / Google Workspace</td><td>Collecting expressions of interest for Management Committee positions; our email service</td></tr>
+        <tr><td>Crowdfunder Community Shares (Crowdfunder Ltd)</td><td>Processing share offer applications and payments from investors</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Both services operate data processing agreements compliant with UK GDPR. Where data is transferred outside the UK, appropriate safeguards (Standard Contractual Clauses) are in place.</p>
+
+  <h2>How long we keep your data</h2>
+  <ul>
+    <li>Newsletter subscribers and registered supporters: until you unsubscribe or withdraw consent, or after three years of inactivity — whichever is sooner.</li>
+    <li>Management Committee applicants: until the recruitment process is complete, then deleted unless you become a committee member.</li>
+    <li>Members: for the duration of your membership and for six years afterwards, as required by our Rules and financial record-keeping obligations.</li>
+    <li>General correspondence: for three years from the date of the correspondence.</li>
+  </ul>
+
+  <h2>Your rights</h2>
+  <p>Under UK data protection law you have the right to:</p>
+  <ul>
+    <li>Access the personal data we hold about you</li>
+    <li>Ask us to correct any inaccurate data</li>
+    <li>Ask us to delete your data in certain circumstances</li>
+    <li>Withdraw consent at any time where we rely on consent to process your data</li>
+    <li>Object to processing based on our legitimate interests</li>
+    <li>Lodge a complaint with the Information Commissioner's Office (ICO)</li>
+  </ul>
+  <p>To exercise any of these rights, please contact us at <a href="mailto:secretary@watlingtoncpt.org.uk">secretary@watlingtoncpt.org.uk</a>. We will respond within one calendar month.</p>
+
+  <h2>Cookies</h2>
+  <p>Our website may use cookies to improve your experience. We will update this notice with full cookie information once our website is fully operational. We will always ask for your consent before setting any non-essential cookies.</p>
+
+  <h2>How to complain</h2>
+  <p>If you are unhappy with how we have handled your personal data, please contact us in the first instance at <a href="mailto:secretary@watlingtoncpt.org.uk">secretary@watlingtoncpt.org.uk</a>. You also have the right to complain to the Information Commissioner's Office at <a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a> or on 0303 123 1113.</p>
+
+  <h2>Changes to this notice</h2>
+  <p>We will update this privacy notice from time to time. The current version and date are shown at the top of this page. Where changes are significant, we will notify subscribers by email.</p>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      Watlington Community Property Limited
+      <span>Community Benefit Society · In Formation · watlingtoncpt.org.uk</span>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Back to main site</a>
+      <a href="mailto:secretary@watlingtoncpt.org.uk">secretary@watlingtoncpt.org.uk</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Watlington Community Property Limited is a Community Benefit Society in formation. FCA registration in progress under the Co-operative and Community Benefit Societies Act 2014. Supported by Plunkett UK. Registered in England and Wales.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -34,6 +34,56 @@ body {
   line-height: 1.7;
 }
 
+/* ── URGENT BANNER ── */
+.urgent-banner {
+  background: var(--brick);
+  padding: 14px 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.urgent-banner-text {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.4;
+}
+.urgent-banner-text span {
+  font-style: italic;
+  font-weight: 400;
+  opacity: 0.9;
+}
+.urgent-banner-btn {
+  background: #fff;
+  color: var(--brick);
+  padding: 9px 22px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 3px;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  transition: background 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+.urgent-banner-btn:hover { background: var(--brick-light); }
+.urgent-banner-pulse {
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pulse 1.8s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+
 /* ── NAV ── */
 nav {
   background: var(--green);
@@ -288,6 +338,13 @@ footer { background: var(--ink); padding: 48px 5vw 32px; }
 </style>
 </head>
 <body>
+
+<!-- URGENT BANNER -->
+<div class="urgent-banner">
+  <div class="urgent-banner-pulse"></div>
+  <p class="urgent-banner-text">2 High Street is now under offer. <span>We're not giving up —</span> pledge your support today.</p>
+  <a href="#register" class="urgent-banner-btn">Pledge now →</a>
+</div>
 
 <!-- NAV -->
 <nav>

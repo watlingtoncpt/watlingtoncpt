@@ -616,6 +616,98 @@ footer { background: var(--ink); padding: 48px 5vw 32px; }
   </div>
 </section>
 
+<!-- TOTALISER -->
+<section class="totaliser-section" id="totaliser">
+  <div class="totaliser-inner">
+    <p class="section-label" style="text-align:center">Pledge tracker</p>
+    <h2>Pledges so far</h2>
+    <p class="totaliser-subtitle">Help us reach £245,000 to buy 2 High Street for the community.</p>
+    <div class="thermometer-wrap">
+      <div class="thermometer-labels">
+        <span class="thermometer-label">£0</span>
+        <span class="thermometer-label target">Target: £245,000</span>
+      </div>
+      <div style="position:relative;width:75%;margin:0 auto">
+        <div class="thermometer-outer" id="thermometer-outer">
+          <div class="thermometer-fill" id="thermometer-fill" style="height:0%"></div>
+          <div class="thermometer-increments">
+            <!-- Ticks at £50k intervals: 50/245=20.4%, 100/245=40.8%, 150/245=61.2%, 200/245=81.6% -->
+            <div class="thermometer-tick" style="bottom:20.4%">
+              <div class="thermometer-tick-line"></div>
+              <span class="thermometer-tick-label">£50k</span>
+            </div>
+            <div class="thermometer-tick" style="bottom:40.8%">
+              <div class="thermometer-tick-line"></div>
+              <span class="thermometer-tick-label">£100k</span>
+            </div>
+            <div class="thermometer-tick" style="bottom:61.2%">
+              <div class="thermometer-tick-line"></div>
+              <span class="thermometer-tick-label">£150k</span>
+            </div>
+            <div class="thermometer-tick" style="bottom:81.6%">
+              <div class="thermometer-tick-line"></div>
+              <span class="thermometer-tick-label">£200k</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="totaliser-amount" id="totaliser-amount">
+      <span class="totaliser-loading">Loading pledges…</span>
+    </div>
+    <p class="totaliser-target">of £245,000 target</p>
+    <p class="totaliser-pct" id="totaliser-pct"></p>
+    <div class="totaliser-cta">
+      <a href="#register" class="btn-primary" style="background:var(--brick)">Add your pledge →</a>
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  var SHEET_ID = '1Pny7SVfwspNASz31SIIL-iecLJq0jjz3HVk25CjNEqE';
+  var CELL = 'A1';
+  var TARGET = 245000;
+  var url = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:json&range=' + CELL;
+
+  function formatCurrency(n) {
+    if (n >= 1000) {
+      return '£' + n.toLocaleString('en-GB');
+    }
+    return '£' + n;
+  }
+
+  function updateTotaliser(value) {
+    var pct = Math.min((value / TARGET) * 100, 100);
+    var fill = document.getElementById('thermometer-fill');
+    var amount = document.getElementById('totaliser-amount');
+    var pctEl = document.getElementById('totaliser-pct');
+
+    if (fill) fill.style.height = Math.max(pct, 2) + '%';
+    if (amount) amount.innerHTML = formatCurrency(value);
+    if (pctEl) pctEl.textContent = pct.toFixed(1) + '% of target';
+  }
+
+  function fetchTotal() {
+    fetch(url)
+      .then(function(r) { return r.text(); })
+      .then(function(text) {
+        var json = JSON.parse(text.replace(/^[^(]*\(/, '').replace(/\);?\s*$/, ''));
+        var val = json.table && json.table.rows && json.table.rows[0] && json.table.rows[0].c && json.table.rows[0].c[0] ? json.table.rows[0].c[0].v : 0;
+        updateTotaliser(Number(val) || 0);
+      })
+      .catch(function() {
+        var amount = document.getElementById('totaliser-amount');
+        if (amount) amount.innerHTML = '<span class="totaliser-error">Unable to load — check back soon</span>';
+      });
+  }
+
+  fetchTotal();
+  setInterval(fetchTotal, 60000);
+})();
+</script>
+
+
 <!-- LEGACY -->
 <section class="legacy-section" id="legacy">
   <p class="section-label">The people behind the property</p>
@@ -790,97 +882,6 @@ footer { background: var(--ink); padding: 48px 5vw 32px; }
     </div>
   </div>
 </section>
-
-<!-- TOTALISER -->
-<section class="totaliser-section" id="totaliser">
-  <div class="totaliser-inner">
-    <p class="section-label" style="text-align:center">Pledge tracker</p>
-    <h2>Pledges so far</h2>
-    <p class="totaliser-subtitle">Help us reach £245,000 to buy 2 High Street for the community.</p>
-    <div class="thermometer-wrap">
-      <div class="thermometer-labels">
-        <span class="thermometer-label">£0</span>
-        <span class="thermometer-label target">Target: £245,000</span>
-      </div>
-      <div style="position:relative;width:75%;margin:0 auto">
-        <div class="thermometer-outer" id="thermometer-outer">
-          <div class="thermometer-fill" id="thermometer-fill" style="height:0%"></div>
-          <div class="thermometer-increments">
-            <!-- Ticks at £50k intervals: 50/245=20.4%, 100/245=40.8%, 150/245=61.2%, 200/245=81.6% -->
-            <div class="thermometer-tick" style="bottom:20.4%">
-              <div class="thermometer-tick-line"></div>
-              <span class="thermometer-tick-label">£50k</span>
-            </div>
-            <div class="thermometer-tick" style="bottom:40.8%">
-              <div class="thermometer-tick-line"></div>
-              <span class="thermometer-tick-label">£100k</span>
-            </div>
-            <div class="thermometer-tick" style="bottom:61.2%">
-              <div class="thermometer-tick-line"></div>
-              <span class="thermometer-tick-label">£150k</span>
-            </div>
-            <div class="thermometer-tick" style="bottom:81.6%">
-              <div class="thermometer-tick-line"></div>
-              <span class="thermometer-tick-label">£200k</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="totaliser-amount" id="totaliser-amount">
-      <span class="totaliser-loading">Loading pledges…</span>
-    </div>
-    <p class="totaliser-target">of £245,000 target</p>
-    <p class="totaliser-pct" id="totaliser-pct"></p>
-    <div class="totaliser-cta">
-      <a href="#register" class="btn-primary" style="background:var(--brick)">Add your pledge →</a>
-    </div>
-  </div>
-</section>
-
-<script>
-(function() {
-  var SHEET_ID = '1Pny7SVfwspNASz31SIIL-iecLJq0jjz3HVk25CjNEqE';
-  var CELL = 'A1';
-  var TARGET = 245000;
-  var url = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:json&range=' + CELL;
-
-  function formatCurrency(n) {
-    if (n >= 1000) {
-      return '£' + n.toLocaleString('en-GB');
-    }
-    return '£' + n;
-  }
-
-  function updateTotaliser(value) {
-    var pct = Math.min((value / TARGET) * 100, 100);
-    var fill = document.getElementById('thermometer-fill');
-    var amount = document.getElementById('totaliser-amount');
-    var pctEl = document.getElementById('totaliser-pct');
-
-    if (fill) fill.style.height = Math.max(pct, 2) + '%';
-    if (amount) amount.innerHTML = formatCurrency(value);
-    if (pctEl) pctEl.textContent = pct.toFixed(1) + '% of target';
-  }
-
-  function fetchTotal() {
-    fetch(url)
-      .then(function(r) { return r.text(); })
-      .then(function(text) {
-        var json = JSON.parse(text.replace(/^[^(]*\(/, '').replace(/\);?\s*$/, ''));
-        var val = json.table && json.table.rows && json.table.rows[0] && json.table.rows[0].c && json.table.rows[0].c[0] ? json.table.rows[0].c[0].v : 0;
-        updateTotaliser(Number(val) || 0);
-      })
-      .catch(function() {
-        var amount = document.getElementById('totaliser-amount');
-        if (amount) amount.innerHTML = '<span class="totaliser-error">Unable to load — check back soon</span>';
-      });
-  }
-
-  fetchTotal();
-  setInterval(fetchTotal, 60000);
-})();
-</script>
 
 <!-- REGISTER INTEREST -->
 <section class="register-section" id="register">

@@ -85,25 +85,9 @@ body {
 }
 
 /* ── NAV ── */
-nav {
-  background: var(--green);
-  padding: 0 5vw;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 68px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
+nav { background: var(--green); padding: 0 5vw; display: flex; align-items: center; justify-content: space-between; height: 68px; position: sticky; top: 0; z-index: 100; }
 .nav-wordmark { display: flex; align-items: center; gap: 14px; }
-.nav-emblem {
-  width: 36px; height: 36px;
-  border: 1.5px solid rgba(255,255,255,0.35);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-}
+.nav-emblem { width: 36px; height: 36px; border: 1.5px solid rgba(255,255,255,0.35); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .nav-emblem svg { width: 18px; height: 18px; }
 .nav-name { font-family: 'Libre Baskerville', serif; color: #fff; font-size: 14px; line-height: 1.25; }
 .nav-name span { display: block; font-family: 'Source Sans 3', sans-serif; font-size: 10px; font-weight: 300; color: rgba(255,255,255,0.6); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 2px; }
@@ -111,6 +95,14 @@ nav {
 .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 13.5px; font-weight: 400; transition: color 0.2s; }
 .nav-links a:hover { color: #fff; }
 .nav-cta { background: var(--brick) !important; color: #fff !important; padding: 9px 20px; border-radius: 3px; font-weight: 500 !important; }
+.nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
+.nav-hamburger span { display: block; width: 22px; height: 2px; background: rgba(255,255,255,0.8); border-radius: 2px; transition: all 0.2s; }
+.mobile-menu { display: none; position: absolute; top: 68px; left: 0; right: 0; background: var(--green); padding: 16px 5vw 24px; z-index: 99; border-top: 1px solid rgba(255,255,255,0.1); }
+.mobile-menu.open { display: block; }
+.mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+.mobile-menu ul li a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 16px; display: block; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.mobile-menu ul li:last-child a { border-bottom: none; }
+.mobile-menu .mob-cta { display: inline-block; margin-top: 16px; background: var(--brick); color: #fff; padding: 12px 24px; border-radius: 3px; font-weight: 600; font-size: 15px; text-decoration: none; }
 
 /* ── HERO ── */
 .hero { background: var(--green); padding: 72px 5vw 0; position: relative; overflow: hidden; }
@@ -448,6 +440,18 @@ details[open] summary { color: var(--brick); }
 .faq-answer p { margin-bottom: 12px; }
 .faq-answer p:last-child { margin-bottom: 0; }
 
+/* ── DOCUMENTS ── */
+.documents-section { background: var(--cream); }
+.documents-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 44px; }
+.doc-card { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 24px; display: flex; flex-direction: column; gap: 12px; transition: border-color 0.2s; }
+.doc-card:hover { border-color: var(--brick); }
+.doc-icon { width: 40px; height: 40px; background: var(--brick-light); border-radius: 3px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.doc-icon svg { width: 20px; height: 20px; }
+.doc-title { font-family: 'Libre Baskerville', serif; font-size: 15px; font-weight: 700; color: var(--ink); line-height: 1.3; }
+.doc-desc { font-size: 13px; color: var(--ink-soft); line-height: 1.7; flex: 1; }
+.doc-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--brick); text-decoration: none; border-bottom: 1px solid var(--brick-light); padding-bottom: 2px; transition: color 0.2s; width: fit-content; }
+.doc-link:hover { color: var(--brick-mid); }
+
 /* ── FOOTER ── */
 footer { background: var(--ink); padding: 48px 5vw 32px; }
 .footer-top { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 24px; flex-wrap: wrap; gap: 24px; }
@@ -462,6 +466,7 @@ footer { background: var(--ink); padding: 48px 5vw 32px; }
 @media(max-width:640px){
   .about-cols, .property-layout, .legacy-layout { grid-template-columns: 1fr; gap: 28px; }
   nav .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
   .ribbon-divider { display: none; }
   .hero { padding: 56px 6vw 52px; }
 }
@@ -492,16 +497,36 @@ footer { background: var(--ink); padding: 48px 5vw 32px; }
   </div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#property">The Property</a></li>
-    <li><a href="#legacy">Mark &amp; Ming Carlisle</a></li>
-    <li><a href="#howitworks">How It Works</a></li>
-    <li><a href="#founders">The Team</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li><a href="#involve">Get Involved</a></li>
-    <li><a href="#totaliser">Pledge Tracker</a></li>
+    <li><a href="#documents">Documents</a></li>
     <li><a href="#register" class="nav-cta">Register Interest</a></li>
   </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="#about" onclick="closeMenu()">About</a></li>
+    <li><a href="#property" onclick="closeMenu()">The Property</a></li>
+    <li><a href="#totaliser" onclick="closeMenu()">Pledge Tracker</a></li>
+    <li><a href="#legacy" onclick="closeMenu()">Mark &amp; Ming Carlisle</a></li>
+    <li><a href="#howitworks" onclick="closeMenu()">How It Works</a></li>
+    <li><a href="#founders" onclick="closeMenu()">The Team</a></li>
+    <li><a href="#faq" onclick="closeMenu()">FAQ</a></li>
+    <li><a href="#documents" onclick="closeMenu()">Documents</a></li>
+    <li><a href="#involve" onclick="closeMenu()">Get Involved</a></li>
+  </ul>
+  <a href="#register" class="mob-cta" onclick="closeMenu()">Register your interest →</a>
+</div>
+<script>
+function closeMenu() {
+  document.getElementById('mobile-menu').classList.remove('open');
+}
+document.getElementById('hamburger').addEventListener('click', function() {
+  document.getElementById('mobile-menu').classList.toggle('open');
+});
+</script>
 
 <!-- HERO -->
 <section class="hero" id="top">
@@ -1156,6 +1181,51 @@ footer { background: var(--ink); padding: 48px 5vw 32px; }
   </div>
 </section>
 
+<!-- DOCUMENTS -->
+<section class="documents-section" id="documents">
+  <p class="section-label">Transparency</p>
+  <h2>Governance documents</h2>
+  <p class="lead">WCP is committed to operating openly. Our public governance documents are available to download below.</p>
+  <div class="documents-grid">
+    <div class="doc-card">
+      <div class="doc-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#9C4A2B" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      </div>
+      <div class="doc-title">Conflict of Interest Policy</div>
+      <p class="doc-desc">How WCP identifies, declares and manages conflicts of interest within the Management Committee.</p>
+      <!-- Upload file as conflict-of-interest-policy.pdf to GitHub -->
+      <a class="doc-link" href="conflict-of-interest-policy.pdf" target="_blank">
+        Download PDF
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      </a>
+    </div>
+    <div class="doc-card">
+      <div class="doc-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#9C4A2B" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      </div>
+      <div class="doc-title">Grievance and Complaints Policy</div>
+      <p class="doc-desc">The process for raising and resolving complaints about WCP's conduct, decisions or management.</p>
+      <!-- Upload file as grievance-and-complaints-policy.pdf to GitHub -->
+      <a class="doc-link" href="grievance-and-complaints-policy.pdf" target="_blank">
+        Download PDF
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      </a>
+    </div>
+    <div class="doc-card">
+      <div class="doc-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#9C4A2B" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      </div>
+      <div class="doc-title">Management Committee Code of Conduct</div>
+      <p class="doc-desc">The standards of behaviour expected of all Management Committee members throughout their tenure.</p>
+      <!-- Upload file as management-committee-code-of-conduct.pdf to GitHub -->
+      <a class="doc-link" href="management-committee-code-of-conduct.pdf" target="_blank">
+        Download PDF
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-top">
@@ -1169,6 +1239,7 @@ footer { background: var(--ink); padding: 48px 5vw 32px; }
       <a href="#howitworks">How It Works</a>
       <a href="#founders">The Team</a>
       <a href="#faq">FAQ</a>
+      <a href="#documents">Documents</a>
       <a href="#involve">Get Involved</a>
       <a href="privacy.html">Privacy Notice</a>
       <a href="mailto:secretary@watlingtoncpt.org.uk">secretary@watlingtoncpt.org.uk</a>

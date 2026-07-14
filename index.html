@@ -483,7 +483,7 @@ footer { background: var(--ink); padding: 48px 5vw 32px; }
 <!-- URGENT BANNER -->
 <div class="urgent-banner">
   <div class="urgent-banner-pulse"></div>
-  <p class="urgent-banner-text">2 High Street is now under offer. <span>We're not giving up —</span> pledge your support today.</p>
+  <p class="urgent-banner-text">2 High Street is now under offer. <span>We're not giving up —</span> we're raising pledges for three High Street properties. Add yours today.</p>
   <a href="#register" class="urgent-banner-btn">Pledge now →</a>
 </div>
 
@@ -712,11 +712,11 @@ document.getElementById('hamburger').addEventListener('click', function() {
   <div class="totaliser-inner">
     <p class="section-label" style="text-align:center">Pledge tracker</p>
     <h2>Pledges so far</h2>
-    <p class="totaliser-subtitle">Help us reach £245,000 to buy 2 High Street for the community.</p>
+    <p class="totaliser-subtitle">We are raising pledges to acquire three properties on Watlington High Street. Help us reach our £600,000 target.</p>
     <div class="thermometer-wrap">
       <div class="thermometer-labels">
         <span class="thermometer-label">£0</span>
-        <span class="thermometer-label target">Target: £245,000</span>
+        <span class="thermometer-label target">Target: £600,000</span>
       </div>
       <div style="position:relative;width:75%;margin:0 auto">
         <div class="thermometer-outer" id="thermometer-outer">
@@ -746,7 +746,7 @@ document.getElementById('hamburger').addEventListener('click', function() {
     <div class="totaliser-amount" id="totaliser-amount">
       <span class="totaliser-loading">Loading pledges…</span>
     </div>
-    <p class="totaliser-target">of £245,000 target</p>
+    <p class="totaliser-target">of £600,000 target</p>
     <p class="totaliser-pct" id="totaliser-pct"></p>
     <div class="totaliser-cta">
       <a href="#register" class="btn-primary" style="background:var(--brick)">Add your pledge →</a>
@@ -758,7 +758,7 @@ document.getElementById('hamburger').addEventListener('click', function() {
 (function() {
   var SHEET_ID = '1Pny7SVfwspNASz31SIIL-iecLJq0jjz3HVk25CjNEqE';
   var CELL = 'A1';
-  var TARGET = 245000;
+  var TARGET = 600000;
   var url = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:json&range=' + CELL;
 
   function formatCurrency(n) {

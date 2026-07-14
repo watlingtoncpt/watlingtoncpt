@@ -160,15 +160,21 @@ h2 { font-family: 'Libre Baskerville', serif; font-size: clamp(24px, 3.5vw, 38px
 
 /* ── PROPERTY ── */
 .property-section { background: var(--cream); }
-.property-layout { display: grid; grid-template-columns: 5fr 4fr; gap: 52px; align-items: start; }
-.property-photo { background: var(--cream-dark); aspect-ratio: 4/3; border-radius: 4px; overflow: hidden; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border); }
-.property-address { font-family: 'Libre Baskerville', serif; font-size: 22px; font-weight: 700; color: var(--ink); margin-bottom: 24px; line-height: 1.2; }
+.property-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 44px; }
+.property-card { background: var(--white); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; }
+.property-card-photo { aspect-ratio: 4/3; background: var(--cream-dark); overflow: hidden; flex-shrink: 0; }
+.property-card-photo img { width: 100%; height: 100%; object-fit: cover; }
+.property-card-photo-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); }
+.property-card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; gap: 12px; }
+.property-card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.property-card-address { font-family: 'Libre Baskerville', serif; font-size: 17px; font-weight: 700; color: var(--ink); line-height: 1.25; }
+.status-pill { display: inline-block; background: var(--brick-light); color: var(--brick); font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
+.status-pill.pending { background: var(--cream-dark); color: var(--ink-soft); }
 .fact-list { display: flex; flex-direction: column; }
-.fact { display: flex; flex-direction: column; padding: 16px 0; border-bottom: 1px solid var(--border); }
+.fact { display: flex; flex-direction: column; padding: 10px 0; border-bottom: 1px solid var(--border); }
 .fact:last-child { border-bottom: none; }
-.fact-label { font-size: 10.5px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 4px; }
-.fact-value { font-size: 14.5px; color: var(--ink); line-height: 1.6; }
-.status-pill { display: inline-block; background: var(--brick-light); color: var(--brick); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 20px; }
+.fact-label { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 3px; }
+.fact-value { font-size: 14px; color: var(--ink); line-height: 1.6; }
 
 /* ── LEGACY ── */
 .legacy-section { background: var(--cream); }
@@ -464,7 +470,7 @@ footer { background: var(--ink); padding: 48px 5vw 32px; }
 
 /* ── RESPONSIVE ── */
 @media(max-width:640px){
-  .about-cols, .property-layout, .legacy-layout { grid-template-columns: 1fr; gap: 28px; }
+  .about-cols, .legacy-layout { grid-template-columns: 1fr; gap: 28px; }
   nav .nav-links { display: none; }
   .nav-hamburger { display: flex; }
   .ribbon-divider { display: none; }
@@ -609,35 +615,95 @@ document.getElementById('hamburger').addEventListener('click', function() {
 
 <!-- THE PROPERTY -->
 <section class="property-section" id="property">
-  <p class="section-label">First acquisition target</p>
-  <div class="property-layout">
-    <div>
-      <span class="status-pill">Fundraising in progress</span>
-      <div class="property-address">2 High Street,<br>Watlington OX49</div>
-      <div class="fact-list">
-        <div class="fact">
-          <span class="fact-label">Property type</span>
-          <span class="fact-value">Mixed-use freehold — two ground-floor retail units and a long-leased residential flat above</span>
+  <p class="section-label">Acquisition targets</p>
+  <h2>Properties we are working to acquire</h2>
+  <p class="lead">WCP is actively taking pledges to support the acquisition of three properties on Watlington High Street. Pledges are not investments — the share offer will open once we are ready to proceed.</p>
+  <div class="property-grid">
+
+    <!-- 2 High Street -->
+    <div class="property-card">
+      <div class="property-card-photo">
+        <img src="2_High_Street-2.jpg" alt="2 High Street, Watlington"
+             style="width:100%;height:100%;object-fit:cover;object-position:center 30%">
+      </div>
+      <div class="property-card-body">
+        <div class="property-card-header">
+          <div class="property-card-address">2 High Street,<br>Watlington OX49</div>
+          <span class="status-pill">Priority 1</span>
         </div>
-        <div class="fact">
-          <span class="fact-label">Location</span>
-          <span class="fact-value">On Watlington High Street, at the heart of the town centre</span>
-        </div>
-        <div class="fact">
-          <span class="fact-label">Why now</span>
-          <span class="fact-value">WCP is seeking to acquire this freehold for permanent community ownership — before it passes to a private investor. This is our founding acquisition — and the first step in building a trust that grows.</span>
-        </div>
-        <div class="fact">
-          <span class="fact-label">What we need</span>
-          <span class="fact-value">Community members to register interest now, ahead of our share offer launch.</span>
+        <div class="fact-list">
+          <div class="fact">
+            <span class="fact-label">Property type</span>
+            <span class="fact-value">Mixed-use freehold — two ground-floor retail units and a long-leased residential flat above</span>
+          </div>
+          <div class="fact">
+            <span class="fact-label">Why it matters</span>
+            <span class="fact-value">The most visible building on the High Street. An enticing independent retail use — particularly in the prominent corner unit — is essential to encourage visitors to stop, shop and stay. This is the acquisition that sets the tone for the whole project.</span>
+          </div>
+          <div class="fact">
+            <span class="fact-label">Current status</span>
+            <span class="fact-value">Under offer to a private buyer. We need to move quickly. Pledge your support now to help us put in a counter offer.</span>
+          </div>
         </div>
       </div>
     </div>
-    <div class="property-photo">
-      <img src="2_High_Street-2.jpg"
-           alt="2 High Street, Watlington"
-           style="width:100%;height:100%;object-fit:cover;object-position:center 30%">
+
+    <!-- 6 High Street -->
+    <div class="property-card">
+      <div class="property-card-photo">
+        <!-- Upload photo as 6_high_street.jpg to GitHub -->
+        <div class="property-card-photo-placeholder">Photo coming soon</div>
+      </div>
+      <div class="property-card-body">
+        <div class="property-card-header">
+          <div class="property-card-address">6 High Street (Watlington Arcade),<br>Watlington OX49</div>
+          <span class="status-pill pending">Priority 2</span>
+        </div>
+        <div class="fact-list">
+          <div class="fact">
+            <span class="fact-label">Property type</span>
+            <span class="fact-value">Historic commercial arcade comprising four independent retail units, with three long-leased residential flats above</span>
+          </div>
+          <div class="fact">
+            <span class="fact-label">Why it matters</span>
+            <span class="fact-value">A cluster of small independent units right in the heart of the High Street. The Arcade has been in the same ownership for 40 years — the current owner has approached WCP directly, expressing a preference to sell to the community.</span>
+          </div>
+          <div class="fact">
+            <span class="fact-label">Current status</span>
+            <span class="fact-value">We are in early discussions with the owner. No competing offer at this stage.</span>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- 26 High Street -->
+    <div class="property-card">
+      <div class="property-card-photo">
+        <!-- Upload photo as 26_high_street.jpg to GitHub -->
+        <div class="property-card-photo-placeholder">Photo coming soon</div>
+      </div>
+      <div class="property-card-body">
+        <div class="property-card-header">
+          <div class="property-card-address">26 High Street,<br>Watlington OX49</div>
+          <span class="status-pill pending">Priority 3</span>
+        </div>
+        <div class="fact-list">
+          <div class="fact">
+            <span class="fact-label">Property type</span>
+            <span class="fact-value">Mixed-use freehold comprising a ground-floor retail unit, three commercial spaces, and a residential flat above</span>
+          </div>
+          <div class="fact">
+            <span class="fact-label">Our interest</span>
+            <span class="fact-value">We are seeking to acquire the ground-floor retail unit only, which we estimate has a value of approximately £125,000. The upper floors and offices are not part of our current plans.</span>
+          </div>
+          <div class="fact">
+            <span class="fact-label">Current status</span>
+            <span class="fact-value">Currently for sale at £450,000 as a whole. We are exploring whether the title can be split to allow us to acquire the retail unit separately.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -736,7 +802,8 @@ document.getElementById('hamburger').addEventListener('click', function() {
 <!-- LEGACY -->
 <section class="legacy-section" id="legacy">
   <p class="section-label">The people behind the property</p>
-  <h2>Mark and Ming Carlisle</h2>
+  <h2>Remembering those who shaped this High Street</h2>
+
   <div class="legacy-layout">
     <div class="legacy-photo">
       <!-- Upload photo as mark-and-ming.jpg to GitHub -->
@@ -745,11 +812,28 @@ document.getElementById('hamburger').addEventListener('click', function() {
            onerror="this.parentElement.innerHTML='<div class=\'legacy-photo-placeholder\'>Photo coming<br>soon</div>'">
     </div>
     <div class="legacy-text">
+      <h3 style="font-family:'Libre Baskerville',serif;font-size:20px;font-weight:700;color:var(--ink);margin-bottom:16px">Mark and Ming Carlisle</h3>
       <p>2 High Street has been in the Carlisle family for decades. Mark Carlisle, a chartered surveyor, land agent, and one of the most respected property professionals in South Oxfordshire, understood instinctively what makes a high street work. He knew that independent businesses need landlords who take a long view: fair rents, continuity, and a genuine interest in the people on the other side of the lease.</p>
       <p>Mark spent his career working with families, estates, and communities across the region, and brought that same sensibility to his own property. He and his wife Ming were landlords who supported their tenants and cared about what happened on Watlington's High Street. That approach made it possible for the businesses here to put down roots.</p>
       <p>Mark died in November 2025. Ming lives with Alzheimer's at Sanctuary Care Home in Watlington. In bringing 2 High Street into community ownership, we hope to honour what they stood for as landlords, and to make permanent the kind of stewardship they practised for so long.</p>
     </div>
   </div>
+
+  <div class="legacy-layout" style="margin-top:56px;padding-top:56px;border-top:1px solid var(--border)">
+    <div class="legacy-photo">
+      <!-- Upload photo as george-bruce.jpg to GitHub -->
+      <img src="george-bruce.jpg" alt="George Bruce"
+           style="width:100%;height:100%;object-fit:cover"
+           onerror="this.parentElement.innerHTML='<div class=\'legacy-photo-placeholder\'>Photo coming<br>soon</div>'">
+    </div>
+    <div class="legacy-text">
+      <h3 style="font-family:'Libre Baskerville',serif;font-size:20px;font-weight:700;color:var(--ink);margin-bottom:16px">George Bruce</h3>
+      <p>George Bruce was a Watlington original. Born in 1937, he arrived in the town in 1960 as an art teacher and never left. Over more than six decades he wove himself into the fabric of the place — setting up the Allotment Association, transforming the Memorial Club, serving as Bowls Chairman for eleven years, and teaching ceramics before retiring to his first love: making things from wood.</p>
+      <p>George died recently, and his family have chosen to honour his memory by raising funds for WCP through the sale of his artwork. Full details of the collection and how to support this initiative will be published here as they are confirmed.</p>
+      <p>George's story in his own words is told in the <a href="https://watlingtonfolk.wordpress.com/2023/01/26/george-bruce/" target="_blank" rel="noopener" style="color:var(--brick);text-decoration:none;border-bottom:1px solid var(--brick-light)">Watlington Folk portrait project</a> — a fitting place to begin.</p>
+    </div>
+  </div>
+
 </section>
 
 <!-- HOW IT WORKS -->
@@ -770,8 +854,8 @@ document.getElementById('hamburger').addEventListener('click', function() {
       <div class="step-marker active">2</div>
       <div class="step-body">
         <span class="step-tag tag-active">Now</span>
-        <h3>Build community support</h3>
-        <p>We're growing a founding community of people who want to see Watlington's high street protected. Register your interest to be first to hear about our share offer.</p>
+        <h3>Identify properties and build support</h3>
+        <p>We are actively pursuing acquisition targets on Watlington High Street and building a community of pledgers who want to see the High Street protected. Register your interest to be first to hear when our share offer launches.</p>
       </div>
     </div>
     <div class="step">
@@ -779,27 +863,28 @@ document.getElementById('hamburger').addEventListener('click', function() {
       <div class="step-body">
         <span class="step-tag tag-pending">Coming soon</span>
         <h3>Launch the community share offer</h3>
-        <p>We will open a regulated community share offer — invest from £500, withdrawable after 3 years subject to the trust's financial position.</p>
+        <p>We will open a regulated community share offer — invest from £500, withdrawable after 3 years subject to WCP's financial position. Every investor becomes a member with an equal vote.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-marker pending">4</div>
       <div class="step-body">
         <span class="step-tag tag-pending">Coming soon</span>
-        <h3>Acquire 2 High Street</h3>
-        <p>Using funds raised, we complete the freehold purchase — placing it under permanent community ownership, protected by an asset lock.</p>
+        <h3>Acquire our first property</h3>
+        <p>Using funds raised, we complete our first freehold purchase — placing it under permanent community ownership, protected by a statutory asset lock that no future decision can override.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-marker pending">5</div>
       <div class="step-body">
         <span class="step-tag tag-pending">The goal</span>
-        <h3>Grow the trust</h3>
-        <p>Rental income and future share offers fund further acquisitions, each one strengthening the trust's balance sheet. One day: a high street that is genuinely ours.</p>
+        <h3>Keep growing</h3>
+        <p>Rental income and future share offers fund further acquisitions. Each property we bring into community ownership strengthens the next. Brick by brick, shop by shop — a high street that is genuinely ours.</p>
       </div>
     </div>
   </div>
 </section>
+
 
 <!-- YOUR STAKE -->
 <section class="stake-section" id="stake">
@@ -833,14 +918,36 @@ document.getElementById('hamburger').addEventListener('click', function() {
   <div class="founders-grid">
     <div class="founder-card">
       <div class="founder-photo">
+        <!-- Upload photo as robin.jpg to GitHub -->
+        <img src="robin.jpg" alt="Robin Fieth"
+             style="width:100%;height:100%;object-fit:cover"
+             onerror="this.style.display='none'">
+      </div>
+      <div class="founder-name">Robin Fieth</div>
+      <div class="founder-role">Founding Member · Chair</div>
+      <p>Nearly 25 years leading mutual organisations, including as Chief Executive of the Building Societies Association. Director of Co-operatives UK and Trustee of Plunkett UK. Has lived in Pyrton for nearly 30 years.</p>
+    </div>
+    <div class="founder-card">
+      <div class="founder-photo">
         <!-- Upload photo as steph.jpg to GitHub -->
         <img src="steph.jpg" alt="Steph Van de Pette"
              style="width:100%;height:100%;object-fit:cover"
              onerror="this.style.display='none'">
       </div>
       <div class="founder-name">Steph Van de Pette</div>
-      <div class="founder-role">Founding Member</div>
+      <div class="founder-role">Founding Member · Secretary</div>
       <p>Owner of SO Sustainable on the High Street and Watlington Business Association member. Served on Watlington Parish Council and helped secure community ownership of the First Steps Family Hub when county funding was withdrawn.</p>
+    </div>
+    <div class="founder-card">
+      <div class="founder-photo">
+        <!-- Upload photo as kevin.jpg to GitHub -->
+        <img src="kevin.jpg" alt="Kevin Senior"
+             style="width:100%;height:100%;object-fit:cover"
+             onerror="this.style.display='none'">
+      </div>
+      <div class="founder-name">Kevin Senior</div>
+      <div class="founder-role">Founding Member · Treasurer</div>
+      <p>Retired partner from an international accountancy firm specialising in financial services. Since retiring has held numerous charitable trustee and school governor positions, building expertise in charity governance and compliance.</p>
     </div>
     <div class="founder-card">
       <div class="founder-photo">

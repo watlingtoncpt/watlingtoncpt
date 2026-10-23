@@ -538,7 +538,7 @@ footer { background: var(--ink); padding: 48px 5vw 32px; }
 
 <!-- URGENT BANNER -->
 <div class="urgent-banner">
-  <p class="urgent-banner-text">We are raising pledges to bring three High Street properties into community ownership. Add yours today.</p>
+  <p class="urgent-banner-text">Our offer on 6 High Street has been accepted. Add your pledge to help us get it over the line.</p>
   <a href="#register" class="urgent-banner-btn">Pledge now →</a>
 </div>
 
@@ -676,7 +676,7 @@ document.getElementById('hamburger').addEventListener('click', function() {
 <section class="property-section" id="property">
   <p class="section-label">Acquisition targets</p>
   <h2>Properties we are working to acquire</h2>
-  <p class="lead">WCP is actively taking pledges to support the acquisition of three properties on Watlington High Street. Pledges are not investments, the share offer will open once we are ready to proceed.</p>
+  <p class="lead">WCP is actively taking pledges to support the acquisition of two properties on Watlington High Street. Pledges are not investments; the share offer will open once we are ready to proceed.</p>
   <div class="property-grid">
 
     <!-- 2 High Street -->
@@ -688,7 +688,7 @@ document.getElementById('hamburger').addEventListener('click', function() {
       <div class="property-card-body">
         <div class="property-card-header">
           <div class="property-card-address">2 High Street,<br>Watlington OX49</div>
-          <span class="status-pill">Priority 1</span>
+          <span class="status-pill pending">Not currently available</span>
         </div>
         <div class="fact-list">
           <div class="fact">
@@ -697,11 +697,11 @@ document.getElementById('hamburger').addEventListener('click', function() {
           </div>
           <div class="fact">
             <span class="fact-label">Why it matters</span>
-            <span class="fact-value">The most visible building on the High Street. An enticing independent retail use, particularly in the prominent corner unit, is essential to encourage visitors to stop, shop and stay. This is the acquisition that sets the tone for the whole project.</span>
+            <span class="fact-value">The most visible building on the High Street. An enticing independent retail use, particularly in the prominent corner unit, is essential to encourage visitors to stop, shop and stay. It remains central to WCP's long-term vision.</span>
           </div>
           <div class="fact">
             <span class="fact-label">Current status</span>
-            <span class="fact-value">We remain committed to bringing 2 High Street into community ownership and are pursuing every route to do so.</span>
+            <span class="fact-value">2 High Street is not currently available for acquisition. If it returns to the market, WCP will look at it again. We remain committed to the goal of bringing it into community ownership in the longer term.</span>
           </div>
         </div>
       </div>
@@ -717,7 +717,7 @@ document.getElementById('hamburger').addEventListener('click', function() {
       <div class="property-card-body">
         <div class="property-card-header">
           <div class="property-card-address">6 High Street (Watlington Arcade),<br>Watlington OX49</div>
-          <span class="status-pill pending">Priority 2</span>
+          <span class="status-pill">Offer accepted</span>
         </div>
         <div class="fact-list">
           <div class="fact">
@@ -730,7 +730,7 @@ document.getElementById('hamburger').addEventListener('click', function() {
           </div>
           <div class="fact">
             <span class="fact-label">Current status</span>
-            <span class="fact-value">Purchase agreed in principle with the owner, subject to contract.</span>
+            <span class="fact-value">Our offer has been accepted by the owner and we are now progressing with solicitors. This is our priority acquisition.</span>
           </div>
         </div>
       </div>
@@ -746,7 +746,7 @@ document.getElementById('hamburger').addEventListener('click', function() {
       <div class="property-card-body">
         <div class="property-card-header">
           <div class="property-card-address">26 High Street,<br>Watlington OX49</div>
-          <span class="status-pill pending">Priority 3</span>
+          <span class="status-pill pending">Target property</span>
         </div>
         <div class="fact-list">
           <div class="fact">
@@ -773,11 +773,11 @@ document.getElementById('hamburger').addEventListener('click', function() {
   <div class="totaliser-inner">
     <p class="section-label" style="text-align:center">Pledge tracker</p>
     <h2>Pledges so far</h2>
-    <p class="totaliser-subtitle">We are raising pledges to acquire three properties on Watlington High Street. Help us reach our £600,000 target.</p>
+    <p class="totaliser-subtitle">We are raising pledges to acquire 6 High Street and 26 High Street. Help us reach our £400,000 target.</p>
     <div class="thermometer-wrap">
       <div class="thermometer-labels">
         <span class="thermometer-label">£0</span>
-        <span class="thermometer-label target">Target: £600,000</span>
+        <span class="thermometer-label target">Target: £400,000</span>
       </div>
       <div style="position:relative;width:75%;margin:0 auto">
         <div class="thermometer-outer" id="thermometer-outer">
@@ -804,27 +804,12 @@ document.getElementById('hamburger').addEventListener('click', function() {
               <div class="thermometer-tick-line"></div>
               <span class="thermometer-tick-label">£500k</span>
             </div>
-            <!-- Property milestone markers (purchase price + costs) -->
-            <div class="thermometer-milestone" style="bottom:45.3%">
-              <div class="thermometer-milestone-line"></div>
-              <span class="thermometer-milestone-label">£272k, 2 High St (inc. costs)</span>
-            </div>
-            <div class="thermometer-milestone" style="bottom:74.8%">
-              <div class="thermometer-milestone-line"></div>
-              <span class="thermometer-milestone-label">£449k, 6 High St (inc. costs)</span>
-            </div>
-            <div class="thermometer-milestone" style="bottom:99.5%">
-              <div class="thermometer-milestone-line"></div>
-              <span class="thermometer-milestone-label">£600k, 26 High St (inc. costs)</span>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
     <div class="totaliser-amount" id="totaliser-amount">
       <span class="totaliser-loading">Loading pledges…</span>
     </div>
-    <p class="totaliser-target">of £600,000 target</p>
+    <p class="totaliser-target">of £400,000 target</p>
     <p class="totaliser-pct" id="totaliser-pct"></p>
     <div class="totaliser-cta">
       <a href="#register" class="btn-primary" style="background:var(--brick)">Add your pledge →</a>
@@ -836,7 +821,7 @@ document.getElementById('hamburger').addEventListener('click', function() {
 (function() {
   var SHEET_ID = '1Pny7SVfwspNASz31SIIL-iecLJq0jjz3HVk25CjNEqE';
   var CELL = 'A1';
-  var TARGET = 600000;
+  var TARGET = 400000;
   var url = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:json&range=' + CELL;
 
   function formatCurrency(n) {
@@ -893,7 +878,7 @@ document.getElementById('hamburger').addEventListener('click', function() {
       <h3 style="font-family:'Libre Baskerville',serif;font-size:20px;font-weight:700;color:var(--ink);margin-bottom:16px">Mark and Ming Carlisle</h3>
       <p>2 High Street has been in the Carlisle family for decades. Mark Carlisle, a chartered surveyor, land agent, and one of the most respected property professionals in South Oxfordshire, understood instinctively what makes a high street work. He knew that independent businesses need landlords who take a long view: fair rents, continuity, and a genuine interest in the people on the other side of the lease.</p>
       <p>Mark spent his career working with families, estates, and communities across the region, and brought that same sensibility to his own property. He and his wife Ming were landlords who supported their tenants and cared about what happened on Watlington's High Street. That approach made it possible for the businesses here to put down roots.</p>
-      <p>Mark died in November 2025. Ming continues to live in Watlington. In bringing 2 High Street into community ownership, we hope to honour what they stood for as landlords, and to make permanent the kind of stewardship they practised for so long.</p>
+      <p>Mark died in November 2025. Ming continues to live in Watlington. In working to bring 2 High Street, and properties like it, into community ownership, we hope to honour what they stood for as landlords, and to make permanent the kind of stewardship they practised for so long.</p>
     </div>
   </div>
 
@@ -1182,7 +1167,7 @@ document.getElementById('hamburger').addEventListener('click', function() {
 
         <details>
           <summary>What is Watlington Community Property?</summary>
-          <div class="faq-answer"><p>Watlington Community Property Limited (WCP) is a Community Benefit Society, a type of democratically owned, regulated organisation, set up to acquire and permanently community-own commercial property on Watlington High Street. We are currently working to acquire three properties: 2 High Street, 6 High Street (Watlington Arcade) and the ground-floor retail unit at 26 High Street.</p><p>The goal is straightforward: take the buildings that house the independent businesses at the heart of this town out of speculative private ownership and put them into community hands, forever.</p></div>
+          <div class="faq-answer"><p>Watlington Community Property Limited (WCP) is a Community Benefit Society, a type of democratically owned, regulated organisation, set up to acquire and permanently community-own commercial property on Watlington High Street. We are actively pursuing two properties: 6 High Street (Watlington Arcade), where our offer has been accepted, and the ground-floor retail unit at 26 High Street. We remain committed to 2 High Street in the longer term and will look at it again if it becomes available.</p><p>The goal is straightforward: take the buildings that house the independent businesses at the heart of this town out of speculative private ownership and put them into community hands, forever.</p></div>
         </details>
 
         <details>
@@ -1204,12 +1189,12 @@ document.getElementById('hamburger').addEventListener('click', function() {
 
         <details>
           <summary>Which properties are WCP buying, and what do they include?</summary>
-          <div class="faq-answer"><p>The target property is the freehold of 2 High Street, Watlington OX49. It includes two ground-floor commercial units, 2 High Street (currently vacant, 593 sq ft) and 2a High Street (currently let, 502 sq ft), plus the landlord's interest in a first-floor flat on a long lease. The flat itself is not part of the acquisition; we are buying the freehold interest only.</p><p>6 High Street (Watlington Arcade) is a historic commercial arcade of four independent retail units, with three long-leased residential flats above. WCP would buy the freehold; the flats remain on their existing long leases.</p><p>At 26 High Street, WCP is seeking to acquire the ground-floor retail unit only.</p></div>
+          <div class="faq-answer"><p>2 High Street is not currently available for acquisition. It is a mixed-use freehold comprising two ground-floor commercial units and the landlord's interest in a first-floor flat. We remain committed to acquiring it in the longer term and will revisit if it returns to the market.</p><p>6 High Street (Watlington Arcade) is our current priority acquisition. It is a historic commercial arcade of four independent retail units, with three long-leased residential flats above. Our offer has been accepted and we are progressing with solicitors. WCP would buy the freehold; the flats remain on their existing long leases.</p><p>At 26 High Street, WCP is seeking to acquire the ground-floor retail unit only.</p></div>
         </details>
 
         <details>
           <summary>What will the shops be used for, who will the tenants be?</summary>
-          <div class="faq-answer"><p>WCP will let to local independent businesses on commercial terms. Our community benefit purpose, preserving commercial premises for independent businesses and preventing speculative use, means we actively apply criteria when selecting tenants. We will not let to national multiples, and certain other business types will not be considered appropriate. Full details of our tenant selection criteria will be set out in WCP's Lettings Policy, which will be published here once adopted by the Management Committee.</p><p>2a High Street is let to SO Sustainable. Its lease will be handled by committee members with no interest in it, and the terms will be reviewed by WCP's solicitors.</p></div>
+          <div class="faq-answer"><p>WCP will let to local independent businesses on commercial terms. Our community benefit purpose, preserving commercial premises for independent businesses and preventing speculative use, means we actively apply criteria when selecting tenants. We will not let to national multiples, and certain other business types will not be considered appropriate. Full details of our tenant selection criteria will be set out in WCP's Lettings Policy, which will be published here once adopted by the Management Committee.</p><p>2a High Street (part of 2 High Street) is let to SO Sustainable. If WCP acquires 2 High Street in future, its lease will be handled by committee members with no interest in it and reviewed by WCP's solicitors. For 6 High Street, commercial leases will be agreed on open-market terms following acquisition.</p></div>
         </details>
 
         <details>

@@ -248,173 +248,6 @@ h2 { font-family: 'Libre Baskerville', serif; font-size: clamp(24px, 3.5vw, 38px
 .card a { font-size: 13px; color: rgba(255,255,255,0.55); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 2px; transition: color 0.2s; }
 .card a:hover { color: #fff; }
 
-/* ── TOTALISER ── */
-.totaliser-section { background: var(--ink); padding: 64px 5vw; }
-.totaliser-section .section-label { color: rgba(255,255,255,0.45); }
-.totaliser-section h2 { color: #fff; max-width: none; text-align: center; margin-bottom: 8px; }
-.totaliser-inner { max-width: 420px; margin: 0 auto; text-align: center; }
-.totaliser-subtitle { font-size: 15px; color: rgba(255,255,255,0.55); margin-bottom: 48px; }
-.thermometer-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
-}
-.thermometer-labels {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 8px;
-}
-.thermometer-label {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
-}
-.thermometer-label.target { color: var(--brick-mid); }
-.thermometer-outer {
-  width: 100%;
-  height: 320px;
-  background: rgba(255,255,255,0.08);
-  border-radius: 80px;
-  overflow: hidden;
-  position: relative;
-  border: 1px solid rgba(255,255,255,0.1);
-}
-.thermometer-fill {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to top, var(--gold-mid) 0%, var(--gold) 100%);
-  border-radius: 0 0 80px 80px;
-  transition: height 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-  min-height: 12px;
-}
-.thermometer-bulb {
-  display: none;
-}
-.thermometer-outer {
-  width: 100%;
-  height: 320px;
-  background: rgba(255,255,255,0.08);
-  border-radius: 12px;
-  overflow: visible;
-  position: relative;
-  border: 1px solid rgba(255,255,255,0.1);
-}
-.thermometer-fill {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to top, var(--gold-mid) 0%, var(--gold) 100%);
-  border-radius: 0 0 12px 12px;
-  transition: height 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-  min-height: 4px;
-}
-.thermometer-increments {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-}
-.thermometer-tick {
-  position: absolute;
-  right: 0;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transform: translateY(50%);
-}
-.thermometer-tick-line {
-  width: 12px;
-  height: 1px;
-  background: rgba(255,255,255,0.25);
-}
-.thermometer-tick-label {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  color: rgba(255,255,255,0.35);
-  white-space: nowrap;
-  position: absolute;
-  right: -52px;
-}
-.thermometer-milestone {
-  position: absolute;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: flex-start;
-  transform: translateY(0);
-  z-index: 2;
-  flex-direction: column;
-}
-.thermometer-milestone-line {
-  width: 100%;
-  height: 2px;
-  background: rgba(255,255,255,0.7);
-}
-.thermometer-milestone-label {
-  position: absolute;
-  top: 4px;
-  left: calc(100% + 8px);
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: #fff;
-  white-space: nowrap;
-  background: var(--brick);
-  padding: 3px 8px;
-  border-radius: 2px;
-}
-@media(max-width:640px){
-  .thermometer-milestone-label {
-    left: 6px;
-    top: 4px;
-    font-size: 8px;
-    max-width: 85%;
-    white-space: normal;
-  }
-  .thermometer-tick-label { display: none; }
-}
-.totaliser-amount {
-  font-family: 'Libre Baskerville', serif;
-  font-size: clamp(36px, 8vw, 64px);
-  font-weight: 700;
-  color: #fff;
-  margin: 32px 0 8px;
-  line-height: 1;
-}
-.totaliser-amount span { color: var(--brick-mid); }
-.totaliser-target {
-  font-size: 14px;
-  color: rgba(255,255,255,0.45);
-  margin-bottom: 8px;
-}
-.totaliser-pct {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--brick-mid);
-  letter-spacing: 0.06em;
-}
-.totaliser-loading {
-  font-size: 14px;
-  color: rgba(255,255,255,0.4);
-  font-style: italic;
-}
-.totaliser-error {
-  font-size: 13px;
-  color: rgba(255,255,255,0.3);
-}
-.totaliser-cta {
-  margin-top: 36px;
-}
 
 /* ── DONATE ── */
 .donate-section { background: var(--green); }
@@ -627,20 +460,6 @@ nav { background: var(--white); border-bottom: 1px solid var(--border); }
 .card p { color: var(--ink-soft); }
 .card a { color: var(--brick); border-bottom-color: var(--brick-light); }
 .card a:hover { color: var(--brick-mid); }
-.totaliser-section { background: var(--green-light); }
-.totaliser-section .section-label { color: var(--brick); }
-.totaliser-section h2 { color: var(--ink); }
-.totaliser-subtitle { color: var(--ink-mid); }
-.thermometer-outer { background: rgba(255,255,255,0.7); border-color: var(--border); }
-.thermometer-tick-line { background: var(--ink-soft); }
-.thermometer-tick-label { color: var(--ink-soft); }
-.totaliser-error { color: var(--ink-soft); }
-.thermometer-label { color: var(--ink-soft); }
-.thermometer-label.target { color: var(--brick); }
-.totaliser-amount, .totaliser-loading { color: var(--ink); }
-.totaliser-target { color: var(--ink-mid); }
-.totaliser-pct { color: var(--brick); }
-.totaliser-cta a:not(.btn-primary) { color: var(--ink-mid) !important; border-bottom-color: var(--ink-soft) !important; }
 .donate-section { background: var(--sky-light); }
 .donate-section .section-label { color: var(--brick); }
 .donate-section h2 { color: var(--ink); }
@@ -662,8 +481,8 @@ nav { background: var(--white); border-bottom: 1px solid var(--border); }
 
 <!-- URGENT BANNER -->
 <div class="urgent-banner">
-  <p class="urgent-banner-text">Our offer on 6 High Street has been accepted. Add your pledge to help us get it over the line.</p>
-  <a href="#register" class="urgent-banner-btn">Pledge now →</a>
+  <p class="urgent-banner-text">Our offer on 6 High Street has been accepted and our share offer is now open. Invest today to help us get it over the line.</p>
+  <a href="https://www.crowdfunder.co.uk/p/watlington" target="_blank" rel="noopener" class="urgent-banner-btn">Invest now →</a>
 </div>
 
 <!-- NAV -->
@@ -687,7 +506,7 @@ nav { background: var(--white); border-bottom: 1px solid var(--border); }
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#documents">Documents</a></li>
     <li><a href="#donate">Donate</a></li>
-    <li><a href="#register" class="nav-cta">Register Interest</a></li>
+    <li><a href="https://www.crowdfunder.co.uk/p/watlington" target="_blank" rel="noopener" class="nav-cta">Invest Now</a></li>
   </ul>
   <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
     <span></span><span></span><span></span>
@@ -697,7 +516,6 @@ nav { background: var(--white); border-bottom: 1px solid var(--border); }
   <ul>
     <li><a href="#about" onclick="closeMenu()">About</a></li>
     <li><a href="#property" onclick="closeMenu()">The Properties</a></li>
-    <li><a href="#totaliser" onclick="closeMenu()">Pledge Tracker</a></li>
     <li><a href="#howitworks" onclick="closeMenu()">How It Works</a></li>
     <li><a href="#founders" onclick="closeMenu()">The Team</a></li>
     <li><a href="#legacy" onclick="closeMenu()">Legacy</a></li>
@@ -707,7 +525,7 @@ nav { background: var(--white); border-bottom: 1px solid var(--border); }
     <li><a href="#donate" onclick="closeMenu()">Donate</a></li>
     <li><a href="#involve" onclick="closeMenu()">Get Involved</a></li>
   </ul>
-  <a href="#register" class="mob-cta" onclick="closeMenu()">Register your interest →</a>
+  <a href="https://www.crowdfunder.co.uk/p/watlington" target="_blank" rel="noopener" class="mob-cta" onclick="closeMenu()">Invest now →</a>
 </div>
 <script>
 function closeMenu() {
@@ -725,7 +543,7 @@ document.getElementById('hamburger').addEventListener('click', function() {
     <h1>Imagine a high street<br><em>that owns itself.</em></h1>
     <p class="hero-sub">Not owned by a distant landlord. Not vulnerable to speculation. Held in community ownership, building by building, for everyone who lives here, now and for generations to come.</p>
     <div class="hero-actions">
-      <a href="#register" class="btn-primary">Register your interest</a>
+      <a href="https://www.crowdfunder.co.uk/p/watlington" target="_blank" rel="noopener" class="btn-primary">Invest now</a>
       <a href="#about" class="btn-ghost">Find out more →</a>
     </div>
   </div>
@@ -797,7 +615,7 @@ document.getElementById('hamburger').addEventListener('click', function() {
 <section class="property-section" id="property">
   <p class="section-label">Acquisition targets</p>
   <h2>Properties we are working to acquire</h2>
-  <p class="lead">WCP is actively taking pledges to support the acquisition of properties on Watlington High Street, starting with 6 High Street. Acquiring 26 High Street depends on a title split and a third-party purchase of the wider building. Pledges are not investments.</p>
+  <p class="lead">Our community share offer is now open to fund the acquisition of properties on Watlington High Street, starting with 6 High Street. Acquiring 26 High Street depends on a title split and a third-party purchase of the wider building.</p>
   <div class="property-grid">
 
     <!-- 6 High Street -->
@@ -889,95 +707,6 @@ document.getElementById('hamburger').addEventListener('click', function() {
   </div>
 </section>
 
-<!-- TOTALISER -->
-<section class="totaliser-section" id="totaliser">
-  <div class="totaliser-inner">
-    <p class="section-label" style="text-align:center">Pledge tracker</p>
-    <h2>Pledges so far</h2>
-    <p class="totaliser-subtitle">We are raising pledges to acquire 6 High Street and, subject to a title split, 26 High Street. Help us reach our £400,000 target.</p>
-    <div class="thermometer-wrap">
-      <div class="thermometer-labels">
-        <span class="thermometer-label">£0</span>
-        <span class="thermometer-label target">Target: £400,000</span>
-      </div>
-      <div style="position:relative;width:75%;margin:0 auto">
-        <div class="thermometer-outer" id="thermometer-outer">
-          <div class="thermometer-fill" id="thermometer-fill" style="height:0%"></div>
-          <div class="thermometer-increments">
-            <!-- Standard ticks -->
-            <div class="thermometer-tick" style="bottom:25%">
-              <div class="thermometer-tick-line"></div>
-              <span class="thermometer-tick-label">£100k</span>
-            </div>
-            <div class="thermometer-tick" style="bottom:50%">
-              <div class="thermometer-tick-line"></div>
-              <span class="thermometer-tick-label">£200k</span>
-            </div>
-            <div class="thermometer-tick" style="bottom:75%">
-              <div class="thermometer-tick-line"></div>
-              <span class="thermometer-tick-label">£300k</span>
-            </div>
-          </div>
-          </div>
-      </div>
-    </div>
-    <div class="totaliser-amount" id="totaliser-amount">
-      <span class="totaliser-loading">Loading pledges…</span>
-    </div>
-    <p class="totaliser-target">of £400,000 target</p>
-    <p class="totaliser-pct" id="totaliser-pct"></p>
-    <div class="totaliser-cta">
-      <a href="#register" class="btn-primary" style="background:var(--brick)">Add your pledge →</a>
-      <a href="#donate" style="display:inline-block;margin-top:12px;font-size:13px;color:rgba(255,255,255,0.6);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.2);padding-bottom:2px">Or make a donation →</a>
-    </div>
-  </div>
-</section>
-
-<script>
-(function() {
-  var SHEET_ID = '1Pny7SVfwspNASz31SIIL-iecLJq0jjz3HVk25CjNEqE';
-  var CELL = 'A1';
-  var TARGET = 400000;
-  var url = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:json&range=' + CELL;
-
-  function formatCurrency(n) {
-    if (n >= 1000) {
-      return '£' + n.toLocaleString('en-GB');
-    }
-    return '£' + n;
-  }
-
-  function updateTotaliser(value) {
-    var pct = Math.min((value / TARGET) * 100, 100);
-    var fill = document.getElementById('thermometer-fill');
-    var amount = document.getElementById('totaliser-amount');
-    var pctEl = document.getElementById('totaliser-pct');
-
-    if (fill) fill.style.height = Math.max(pct, 2) + '%';
-    if (amount) amount.innerHTML = formatCurrency(value);
-    if (pctEl) pctEl.textContent = pct.toFixed(1) + '% of target';
-  }
-
-  function fetchTotal() {
-    fetch(url)
-      .then(function(r) { return r.text(); })
-      .then(function(text) {
-        var json = JSON.parse(text.replace(/^[^(]*\(/, '').replace(/\);?\s*$/, ''));
-        var val = json.table && json.table.rows && json.table.rows[0] && json.table.rows[0].c && json.table.rows[0].c[0] ? json.table.rows[0].c[0].v : 0;
-        updateTotaliser(Number(val) || 0);
-      })
-      .catch(function() {
-        var amount = document.getElementById('totaliser-amount');
-        if (amount) amount.innerHTML = '<span class="totaliser-error">Unable to load, check back soon</span>';
-      });
-  }
-
-  fetchTotal();
-  setInterval(fetchTotal, 60000);
-})();
-</script>
-
-
 <!-- LEGACY -->
 <section class="legacy-section" id="legacy">
   <p class="section-label">The people behind the property</p>
@@ -1041,7 +770,7 @@ document.getElementById('hamburger').addEventListener('click', function() {
       <div class="step-body">
         <span class="step-tag tag-complete">Complete</span>
         <h3>Identify properties and build support</h3>
-        <p>We are actively pursuing acquisition targets on Watlington High Street and building a community of pledgers who want to see the High Street protected. Register your interest to be first to hear when our share offer launches.</p>
+        <p>We identified our target properties on Watlington High Street and built a community of supporters who want to see the High Street protected.</p>
       </div>
     </div>
     <div class="step">
@@ -1049,7 +778,7 @@ document.getElementById('hamburger').addEventListener('click', function() {
       <div class="step-body">
         <span class="step-tag tag-active">Now</span>
         <h3>Launch the community share offer</h3>
-        <p>We will open a regulated community share offer very soon. Invest from £200 up to £20,000. Shares can be withdrawn after a minimum of five years at the Management Committee's discretion. Every investor becomes a member with an equal vote.</p>
+        <p>Our regulated community share offer is now open. <a href="https://www.crowdfunder.co.uk/p/watlington" target="_blank" rel="noopener" style="color:var(--brick);font-weight:600">Invest now</a> from £200 up to £20,000. Shares can be withdrawn after a minimum of five years at the Management Committee's discretion. Every investor becomes a member with an equal vote.</p>
       </div>
     </div>
     <div class="step">
@@ -1079,7 +808,7 @@ document.getElementById('hamburger').addEventListener('click', function() {
   <div class="stake-grid">
     <div class="stake-item">
       <h3>Protected by law</h3>
-      <p>A statutory asset lock means no property can ever be sold for private gain, now or in future.</p>
+      <p>A statutory asset lock means WCP's assets can never be used for private gain, now or in future.</p>
     </div>
     <div class="stake-item">
       <h3>Shares from £200 to £20,000</h3>
@@ -1164,30 +893,30 @@ document.getElementById('hamburger').addEventListener('click', function() {
 <section class="involve-section" id="involve">
   <p class="section-label">Get involved</p>
   <h2>How you can support this project</h2>
-  <p class="lead">Every pledge, conversation and share of our news strengthens the case for community ownership.</p>
+  <p class="lead">Every investment, conversation and share of our news strengthens the case for community ownership.</p>
   <div class="cards">
     <div class="card">
       <div class="card-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
       </div>
-      <h3>Register interest</h3>
-      <p>Sign up for updates and be first to hear when our share offer launches.</p>
-      <a href="#register">Register below →</a>
+      <h3>Get updates</h3>
+      <p>Sign up for news on WCP's progress and community events.</p>
+      <a href="#register">Sign up below →</a>
     </div>
     <div class="card">
       <div class="card-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h2"/><path d="M10 15h4"/></svg>
       </div>
       <h3>Invest</h3>
-      <p>When our share offer launches, invest from as little as £200 and become a member with a vote at our AGM.</p>
-      <a href="#register">Get notified →</a>
+      <p>Our share offer is open. Invest from as little as £200 and become a member with a vote at our AGM.</p>
+      <a href="https://www.crowdfunder.co.uk/p/watlington" target="_blank" rel="noopener">Invest now →</a>
     </div>
     <div class="card">
       <div class="card-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
       </div>
       <h3>Make a donation</h3>
-      <p>Support the campaign now with a donation. Not an investment, and no shares are issued. Donations help fund the costs of getting the share offer to launch.</p>
+      <p>Support the campaign now with a donation. Not an investment, and no shares are issued. Donations help fund the costs of setting up and running WCP.</p>
       <a href="#donate">Donate now →</a>
     </div>
     <div class="card">
@@ -1213,10 +942,11 @@ document.getElementById('hamburger').addEventListener('click', function() {
 <section class="donate-section" id="donate">
   <p class="section-label">Support the campaign</p>
   <h2>Make a donation</h2>
-  <p class="lead">If you would like to support WCP right now, you can make a donation using the secure payment link below. Donations go directly to WCP and help fund the costs of getting the share offer to launch.</p>
+  <p class="lead"><strong>Donations are separate from the share offer and do not buy shares.</strong> If you want to invest, <a href="https://www.crowdfunder.co.uk/p/watlington" target="_blank" rel="noopener" style="color:var(--brick);text-decoration:underline">invest on our Crowdfunder page</a>. A donation goes directly to WCP to help fund the costs of setting up and running the society. You will not become a member and it is not refundable.</p>
+  <p class="lead">Donations through this link are limited to £100 each. For larger gifts, email <a href="mailto:secretary@watlingtoncpt.org.uk" style="color:var(--brick);text-decoration:underline">secretary@watlingtoncpt.org.uk</a>.</p>
   <div class="donate-inner">
     <div class="donate-cta-block">
-      <a href="https://pay.gogetpaid.co.uk/kG0zS22BS8SEkHJF8IWGKy6qHzR6WpohWweJPqVBw7I" target="_blank" rel="noopener" class="donate-btn">Donate to WCP →</a>
+      <a href="https://pay.gogetpaid.co.uk/FQaR8A5E2BytaYS4UvoV7lqhRToO07pI7DZz0M0LU-M" target="_blank" rel="noopener" class="donate-btn">Make a donation (not a share purchase) →</a>
 
     </div>
     <div class="donate-notices">
@@ -1224,7 +954,7 @@ document.getElementById('hamburger').addEventListener('click', function() {
         <p><strong>This is a donation, not an investment.</strong> No shares will be issued for donations. You will not become a member of WCP, and you will not receive a financial return. Donations are not refundable.</p>
       </div>
       <div class="donate-notice">
-        <p><strong>The share offer is separate.</strong> When our regulated community share offer launches, you will be able to invest from £200 and become a member with a vote. Register your interest below to be notified when it opens.</p>
+        <p><strong>The share offer is separate.</strong> Our regulated community share offer is now open: you can invest from £200 and become a member with a vote. <a href="https://www.crowdfunder.co.uk/p/watlington" target="_blank" rel="noopener" style="color:var(--brick);text-decoration:underline">Invest on our Crowdfunder page</a>.</p>
       </div>
       <div class="donate-notice">
         <p>Payments are processed securely by Go Get Paid, a service provided by BankiFi Technology Ltd and The Co-operative Bank. WCP receives your payment directly into its Co-operative Bank account. Your payment data is handled in accordance with <a href="https://www.gogetpaid.co.uk/privacy-notice" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.7);text-decoration:underline">Go Get Paid's privacy notice</a>.</p>
@@ -1237,10 +967,10 @@ document.getElementById('hamburger').addEventListener('click', function() {
 <section class="register-section" id="register">
   <div class="register-inner">
     <p class="section-label">Stay in the loop</p>
-    <h2>Register your interest</h2>
-    <p class="lead">Leave your details and we'll keep you updated on our progress and let you know when the share offer is ready.</p>
+    <h2>Get our updates</h2>
+    <p class="lead">Leave your details and we'll keep you updated on our progress and community events.</p>
     <div style="margin-bottom:8px">
-      <a href="http://eepurl.com/3nrmLX2VhX" target="_blank" rel="noopener" class="btn-primary" style="font-size:16px;padding:16px 36px;display:inline-block">Register your interest →</a>
+      <a href="http://eepurl.com/3nrmLX2VhX" target="_blank" rel="noopener" class="btn-primary" style="font-size:16px;padding:16px 36px;display:inline-block">Sign up for updates →</a>
     </div>
     <p class="form-note">Opens in a new tab. Updates about WCP only. No third parties. Unsubscribe any time.</p>
   </div>
@@ -1386,7 +1116,7 @@ document.getElementById('hamburger').addEventListener('click', function() {
 
         <details>
           <summary>How do I invest?</summary>
-          <div class="faq-answer"><p>The share offer is not yet live, register your interest at watlingtoncpt.org.uk and we will let you know the moment it opens.</p><p>When the offer opens, you will be able to invest via an online platform, accepting debit and credit cards, Apple Pay, Google Pay, and bank transfer. If you prefer not to invest online, email secretary@watlingtoncpt.org.uk to request a paper application form.</p><p>Full details of how to invest, including the platform and payment options, will be published in the share offer document.</p></div>
+          <div class="faq-answer"><p>The share offer is open. Invest on <a href="https://www.crowdfunder.co.uk/p/watlington" target="_blank" rel="noopener">our Crowdfunder page</a>, accepting debit and credit cards, Apple Pay, Google Pay, and bank transfer. If you prefer not to invest online, email secretary@watlingtoncpt.org.uk to request a paper application form.</p><p>Full details of how to invest are in the <a href="share-offer-document.pdf" target="_blank" rel="noopener">Share Offer Document</a>. Please read it before investing.</p></div>
         </details>
 
         <details>
@@ -1416,12 +1146,12 @@ document.getElementById('hamburger').addEventListener('click', function() {
 
         <details>
           <summary>When can I get my money back?</summary>
-          <div class="faq-answer"><p>Community shares are long-term capital. There will be an initial lock-in period during which withdrawals are not permitted, and withdrawals after that period are at the absolute discretion of the Management Committee, they are never guaranteed.</p><p>Full details of the lock-in period, withdrawal process, notice requirements, and any conditions applying to withdrawals will be published in the share offer document. Do not invest money you may need in the short or medium term.</p></div>
+          <div class="faq-answer"><p>Community shares are long-term capital. Shares can only be withdrawn after a minimum holding period of five years, and withdrawals after that period are at the absolute discretion of the Management Committee, they are never guaranteed.</p><p>Full details of the withdrawal process and any conditions are in the Share Offer Document. Do not invest money you may need in the short or medium term.</p></div>
         </details>
 
         <details>
           <summary>What return will I get on my investment?</summary>
-          <div class="faq-answer"><p>WCP may pay a modest rate of interest on shares, subject to financial performance and the Management Committee's assessment of affordability. Interest is targeted from Year 5. Interest is never guaranteed. Full details of any interest rate, timing, and conditions will be published in the share offer document.</p><p>Beyond any interest, members do not receive a financial return. Any surplus is reinvested in the society's community purpose, maintaining the property, building reserves, and funding future acquisitions. This is by design: WCP is a community benefit society, not an investment vehicle.</p><p>Community shares carry real risk. The value of your investment could go down as well as up. You should not invest more than you can afford to hold for the long term.</p></div>
+          <div class="faq-answer"><p>WCP may pay a modest rate of interest on shares, subject to financial performance and the Management Committee's assessment of affordability. Interest is targeted from Year 5. Interest is never guaranteed. Full details of any interest rate, timing, and conditions are in the Share Offer Document.</p><p>Beyond any interest, members do not receive a financial return. Any surplus is reinvested in the society's community purpose, maintaining the property, building reserves, and funding future acquisitions. This is by design: WCP is a community benefit society, not an investment vehicle.</p><p>Community shares carry real risk. The value of your investment could go down as well as up. You should not invest more than you can afford to hold for the long term.</p></div>
         </details>
 
         <details>
@@ -1477,12 +1207,12 @@ document.getElementById('hamburger').addEventListener('click', function() {
 
         <details>
           <summary>What happens if WCP do not raise enough money?</summary>
-          <div class="faq-answer"><p>The share offer will have a hard minimum target. If that target is not reached by the closing date, the offer closes without proceeding to acquisition and all share capital is returned to investors in full. Investors bear none of the cost of an unsuccessful offer.</p><p>Full details of the minimum target, refund process, and timeline will be published in the share offer document.</p></div>
+          <div class="faq-answer"><p>The share offer has a hard minimum target. If that target is not reached by the closing date, the offer closes without proceeding to acquisition and all share capital is returned to investors in full. Investors bear none of the cost of an unsuccessful offer.</p><p>Full details of the minimum target, refund process, and timeline are in the Share Offer Document.</p></div>
         </details>
 
         <details>
           <summary>What if the purchase falls through after the offer closes?</summary>
-          <div class="faq-answer"><p>If the offer has closed and funds have been transferred to WCP but the acquisition cannot proceed, for example if the title to 26 High Street cannot be split or the vendor withdraws, share capital would be returned to investors in full. Full details of the conditions and process for refunds in this scenario will be set out in the share offer document.</p></div>
+          <div class="faq-answer"><p>If the offer has closed and funds have been transferred to WCP but the acquisition cannot proceed, for example if the title to 26 High Street cannot be split or the vendor withdraws, share capital would be returned to investors in full. Full details of the conditions and process for refunds in this scenario are set out in the Share Offer Document.</p></div>
         </details>
 
         <details>
@@ -1740,7 +1470,7 @@ document.getElementById('hamburger').addEventListener('click', function() {
   </div>
   <div class="footer-bottom">
     <p>Watlington Community Property Limited is a Community Benefit Society registered with the Financial Conduct Authority under the Co-operative and Community Benefit Societies Act 2014. Registration No. 9831. Supported by Plunkett UK. Registered in England and Wales.</p>
-    <p style="margin-top:6px">This website does not constitute an offer of investment. A regulated share offer document will be published in due course.</p>
+    <p style="margin-top:6px">Community shares are at risk. You could lose some or all of the money you invest, and you have no right to compensation from the Financial Services Compensation Scheme. Read the Share Offer Document before investing. Do not invest money you cannot afford to lose.</p>
   </div>
 </footer>
 

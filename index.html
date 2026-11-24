@@ -475,6 +475,30 @@ nav { background: var(--white); border-bottom: 1px solid var(--border); }
 .audio-label { color: var(--brick); }
 .audio-title { color: var(--ink); }
 .audio-desc { color: var(--ink-soft); }
+
+/* ── RAISED SO FAR ── */
+.raised-section { background: var(--green-light); padding: 64px 5vw; }
+.raised-layout { max-width: 760px; margin: 0 auto; display: grid; grid-template-columns: auto 1fr; gap: 56px; align-items: center; }
+.raised-thermo { display: flex; gap: 14px; height: 400px; padding: 4px 0; }
+.raised-bar { position: relative; width: 56px; height: 100%; background: rgba(255,255,255,0.85); border: 1px solid var(--border); border-radius: 28px; overflow: hidden; display: flex; align-items: flex-end; }
+.raised-fill { width: 100%; height: 0; background: linear-gradient(to top, var(--gold-mid), var(--gold)); border-radius: 28px; transition: height 1s ease; }
+.raised-scale { position: relative; height: 100%; min-width: 150px; }
+.raised-tick { position: absolute; left: 0; font-size: 12px; color: var(--ink-soft); white-space: nowrap; }
+.raised-tick.top { top: 0; }
+.raised-tick.bottom { bottom: 0; }
+.raised-text .section-label { color: var(--brick); }
+.raised-text h2 { color: var(--ink); max-width: none; margin-bottom: 8px; }
+.raised-sub { font-size: 15px; color: var(--ink-mid); margin-bottom: 24px; line-height: 1.6; }
+.raised-amount { font-family: 'Libre Baskerville', serif; font-size: clamp(40px, 7vw, 60px); font-weight: 700; color: var(--ink); line-height: 1.1; }
+.raised-of { font-size: 14px; color: var(--ink-mid); margin: 6px 0 4px; line-height: 1.5; }
+.raised-updated { font-size: 12px; color: var(--ink-soft); }
+.raised-note { font-size: 12px; color: var(--ink-soft); max-width: 420px; margin: 16px 0 24px; line-height: 1.6; }
+.raised-error { font-size: 14px; color: var(--ink-soft); }
+@media (max-width: 640px) {
+  .raised-layout { grid-template-columns: 1fr; gap: 28px; justify-items: center; text-align: center; }
+  .raised-thermo { height: 320px; }
+  .raised-note { margin-left: auto; margin-right: auto; }
+}
 </style>
 </head>
 <body>
@@ -515,6 +539,7 @@ nav { background: var(--white); border-bottom: 1px solid var(--border); }
 <div class="mobile-menu" id="mobile-menu">
   <ul>
     <li><a href="#about" onclick="closeMenu()">About</a></li>
+    <li><a href="#raised" onclick="closeMenu()">Raised So Far</a></li>
     <li><a href="#property" onclick="closeMenu()">The Properties</a></li>
     <li><a href="#howitworks" onclick="closeMenu()">How It Works</a></li>
     <li><a href="#founders" onclick="closeMenu()">The Team</a></li>
@@ -582,6 +607,83 @@ document.getElementById('hamburger').addEventListener('click', function() {
     </div>
   </div>
 </section>
+
+<!-- RAISED SO FAR -->
+<section class="raised-section" id="raised">
+  <div class="raised-layout">
+    <div class="raised-thermo" aria-hidden="false">
+      <div class="raised-bar" role="progressbar" aria-label="Amount raised towards the target" aria-valuemin="0" aria-valuemax="180355" aria-valuenow="0" id="raised-bar">
+        <div class="raised-fill" id="raised-fill"></div>
+      </div>
+      <div class="raised-scale">
+        <span class="raised-tick top">Target £180,355</span>
+        <span class="raised-tick bottom">£0</span>
+      </div>
+    </div>
+    <div class="raised-text">
+      <p class="section-label">Share offer progress</p>
+      <h2>Raised so far</h2>
+      <p class="raised-sub">Community investment in WCP, including online and offline investments.</p>
+      <div class="raised-amount" id="raised-amount">&nbsp;</div>
+      <p class="raised-of" id="raised-of">of £180,355 target</p>
+      <p class="raised-updated" id="raised-updated"></p>
+      <p class="raised-note">Figures are updated manually and may lag the live total on our Crowdfunder page, which is the definitive count. Community shares are at risk. Read the Share Offer Document before investing.</p>
+      <a href="https://www.crowdfunder.co.uk/p/watlington" target="_blank" rel="noopener" class="btn-primary">Invest now →</a>
+    </div>
+  </div>
+</section>
+<script>
+(function() {
+  var SHEET_ID = '1Pny7SVfwspNASz31SIIL-iecLJq0jjz3HVk25CjNEqE';
+  var INITIAL = 180355, STRETCH = INITIAL;
+  var url = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:json&range=B3:B4';
+
+  function money(n) { return '£' + Number(n).toLocaleString('en-GB'); }
+
+  function render(value, updated) {
+    var pctStretch = Math.min(value / STRETCH * 100, 100);
+    var fill = document.getElementById('raised-fill');
+    var bar = document.getElementById('raised-bar');
+    var of = document.getElementById('raised-of');
+    var amount = document.getElementById('raised-amount');
+    var upd = document.getElementById('raised-updated');
+    if (amount) amount.textContent = money(value);
+    if (fill) fill.style.height = Math.max(pctStretch, 1.5) + '%';
+    if (bar) bar.setAttribute('aria-valuenow', value);
+    if (of) {
+      of.textContent = value >= INITIAL
+        ? 'Target of ' + money(INITIAL) + ' reached. Thank you.'
+        : Math.round(value / INITIAL * 100) + '% of our ' + money(INITIAL) + ' target';
+    }
+    if (upd) upd.textContent = updated ? 'Updated ' + updated : '';
+  }
+
+  function fail() {
+    var amount = document.getElementById('raised-amount');
+    var of = document.getElementById('raised-of');
+    if (amount) amount.innerHTML = '<span class="raised-error">Total unavailable</span>';
+    if (of) of.innerHTML = '<span class="raised-error">See the live total on our Crowdfunder page.</span>';
+  }
+
+  function load() {
+    fetch(url).then(function(r) { return r.text(); }).then(function(text) {
+      var json = JSON.parse(text.replace(/^[^(]*\(/, '').replace(/\);?\s*$/, ''));
+      var rows = (json.table && json.table.rows) || [];
+      var val = rows[0] && rows[0].c && rows[0].c[0] ? Number(rows[0].c[0].v) : NaN;
+      var upd = rows[1] && rows[1].c && rows[1].c[0] && rows[1].c[0].v != null ? String(rows[1].c[0].f || rows[1].c[0].v) : '';
+      var m = upd.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})(?:\s+(\d{1,2}:\d{2}))?/);
+      if (m) {
+        var mon = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][Number(m[2]) - 1];
+        upd = Number(m[1]) + ' ' + mon + ' ' + m[3] + (m[4] ? ', ' + m[4] : '');
+      }
+      if (isNaN(val)) { fail(); return; }
+      render(val, upd);
+    }).catch(fail);
+  }
+  load();
+  setInterval(load, 300000);
+})();
+</script>
 
 <!-- WHAT WE DO -->
 <section id="what">

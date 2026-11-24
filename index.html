@@ -627,7 +627,7 @@ document.getElementById('hamburger').addEventListener('click', function() {
       <div class="raised-amount" id="raised-amount">&nbsp;</div>
       <p class="raised-of" id="raised-of">of £180,355 target</p>
       <p class="raised-updated" id="raised-updated"></p>
-      <p class="raised-note">Figures are updated manually and may lag the live total on our Crowdfunder page, which is the definitive count. Community shares are at risk. Read the Share Offer Document before investing.</p>
+      <p class="raised-note">This total combines investments made through our Crowdfunder page with offline investments. It is updated manually, so the Crowdfunder page may show a more recent online figure. Community shares are at risk. Read the Share Offer Document before investing.</p>
       <a href="https://www.crowdfunder.co.uk/p/watlington" target="_blank" rel="noopener" class="btn-primary">Invest now →</a>
     </div>
   </div>
@@ -636,7 +636,7 @@ document.getElementById('hamburger').addEventListener('click', function() {
 (function() {
   var SHEET_ID = '1Pny7SVfwspNASz31SIIL-iecLJq0jjz3HVk25CjNEqE';
   var INITIAL = 180355, STRETCH = INITIAL;
-  var url = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:json&range=B3:B4';
+  var url = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:json&headers=0&range=B3:B4';
 
   function money(n) { return '£' + Number(n).toLocaleString('en-GB'); }
 
@@ -662,7 +662,7 @@ document.getElementById('hamburger').addEventListener('click', function() {
     var amount = document.getElementById('raised-amount');
     var of = document.getElementById('raised-of');
     if (amount) amount.innerHTML = '<span class="raised-error">Total unavailable</span>';
-    if (of) of.innerHTML = '<span class="raised-error">See the live total on our Crowdfunder page.</span>';
+    if (of) of.innerHTML = '<span class="raised-error">Please check back soon.</span>';
   }
 
   function load() {

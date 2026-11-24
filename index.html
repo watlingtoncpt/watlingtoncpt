@@ -669,7 +669,8 @@ document.getElementById('hamburger').addEventListener('click', function() {
     fetch(url).then(function(r) { return r.text(); }).then(function(text) {
       var json = JSON.parse(text.replace(/^[^(]*\(/, '').replace(/\);?\s*$/, ''));
       var rows = (json.table && json.table.rows) || [];
-      var val = rows[0] && rows[0].c && rows[0].c[0] ? Number(rows[0].c[0].v) : NaN;
+      var cell = rows[0] && rows[0].c && rows[0].c[0];
+      var val = cell ? parseFloat(String(cell.v != null ? cell.v : cell.f).replace(/[^0-9.\-]/g, '')) : NaN;
       var upd = rows[1] && rows[1].c && rows[1].c[0] && rows[1].c[0].v != null ? String(rows[1].c[0].f || rows[1].c[0].v) : '';
       var m = upd.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})(?:\s+(\d{1,2}:\d{2}))?/);
       if (m) {
@@ -678,7 +679,7 @@ document.getElementById('hamburger').addEventListener('click', function() {
       }
       if (isNaN(val)) { fail(); return; }
       render(val, upd);
-    }).catch(fail);
+    }).catch(function(e) { if (window.console) console.error('Totaliser error', e); fail(); });
   }
   load();
   setInterval(load, 300000);

@@ -668,15 +668,24 @@ document.getElementById('hamburger').addEventListener('click', function() {
   function load() {
     fetch(url).then(function(r) { return r.text(); }).then(function(text) {
       var json = JSON.parse(text.replace(/^[^(]*\(/, '').replace(/\);?\s*$/, ''));
-      var rows = (json.table && json.table.rows) || [];
-      var cell = rows[0] && rows[0].c && rows[0].c[0];
-      var val = cell ? parseFloat(String(cell.v != null ? cell.v : cell.f).replace(/[^0-9.\-]/g, '')) : NaN;
-      var upd = rows[1] && rows[1].c && rows[1].c[0] && rows[1].c[0].v != null ? String(rows[1].c[0].f || rows[1].c[0].v) : '';
+      var items = [];
+      var t = json.table || {};
+      if (t.cols && t.cols[0] && t.cols[0].label) items.push(String(t.cols[0].label));
+      (t.rows || []).forEach(function(r) {
+        var c = r.c && r.c[0];
+        if (c) items.push(String((c.f != null ? c.f : c.v)));
+      });
+      var val = NaN, upd = '';
+      items.forEach(function(x) {
+        var isDate = /\d{1,2}\/\d{1,2}\/\d{4}/.test(x) || /^Date\(/.test(x);
+        if (isDate) { if (!upd) upd = x; }
+        else if (isNaN(val)) { var n = parseFloat(x.replace(/[^0-9.\-]/g, '')); if (!isNaN(n)) val = n; }
+      });
       var m = upd.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})(?:\s+(\d{1,2}:\d{2}))?/);
       if (m) {
         var mon = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][Number(m[2]) - 1];
         upd = Number(m[1]) + ' ' + mon + ' ' + m[3] + (m[4] ? ', ' + m[4] : '');
-      }
+      } else { upd = ''; }
       if (isNaN(val)) { fail(); return; }
       render(val, upd);
     }).catch(function(e) { if (window.console) console.error('Totaliser error', e); fail(); });

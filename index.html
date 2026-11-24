@@ -665,22 +665,20 @@ document.getElementById('hamburger').addEventListener('click', function() {
     if (of) of.innerHTML = '<span class="raised-error">Please check back soon.</span>';
   }
 
-  function load() {
-    fetch(url).then(function(r) { return r.text(); }).then(function(text) {
+  function cell(rng) {
+    var u = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:json&headers=0&range=' + rng;
+    return fetch(u).then(function(r) { return r.text(); }).then(function(text) {
       var json = JSON.parse(text.replace(/^[^(]*\(/, '').replace(/\);?\s*$/, ''));
-      var items = [];
       var t = json.table || {};
-      if (t.cols && t.cols[0] && t.cols[0].label) items.push(String(t.cols[0].label));
-      (t.rows || []).forEach(function(r) {
-        var c = r.c && r.c[0];
-        if (c) items.push(String((c.f != null ? c.f : c.v)));
-      });
-      var val = NaN, upd = '';
-      items.forEach(function(x) {
-        var isDate = /\d{1,2}\/\d{1,2}\/\d{4}/.test(x) || /^Date\(/.test(x);
-        if (isDate) { if (!upd) upd = x; }
-        else if (isNaN(val)) { var n = parseFloat(x.replace(/[^0-9.\-]/g, '')); if (!isNaN(n)) val = n; }
-      });
+      var c = t.rows && t.rows[0] && t.rows[0].c && t.rows[0].c[0];
+      if (c) return String(c.f != null ? c.f : c.v);
+      return t.cols && t.cols[0] ? String(t.cols[0].label || '') : '';
+    });
+  }
+  function load() {
+    Promise.all([cell('B3:B3'), cell('B4:B4')]).then(function(res) {
+      var val = parseFloat(res[0].replace(/[^0-9.\-]/g, ''));
+      var upd = res[1];
       var m = upd.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})(?:\s+(\d{1,2}:\d{2}))?/);
       if (m) {
         var mon = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][Number(m[2]) - 1];
